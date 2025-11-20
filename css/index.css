@@ -13,6 +13,7 @@ body {
     display: grid;
     place-items: center;
     color: white;
+    padding: 20px;
 }
 
 .container {
@@ -21,7 +22,7 @@ body {
 }
 
 .box {
-    padding: 50px 20px 50px 20px;
+    padding: 50px;
     border-radius: 0 0 5px 5px;
     background-color: #FC8D59;
     display: flex;
@@ -31,8 +32,9 @@ body {
 }
 
 .title {
-    min-width: 400px;
-    padding: 25px 0 25px 0;
+    width: 100%;
+    max-width: 500px;
+    padding: 50px 70px 20px 70px;
     border-radius: 5px 5px 0 0;
     background-color: #D7301F;
     text-align: center;
@@ -83,4 +85,18 @@ span {
 
 h4 {
     padding-top: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        text-align: center;
+        padding: 40px;
+    }
 }
