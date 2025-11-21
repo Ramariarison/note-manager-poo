@@ -7,11 +7,6 @@
 
 body {
     height: 100vh;
-    /*
-    background-image: url('../assets/images/bg.jpg');
-    background-size: cover;
-    background-position: center;
-    */
     background-color: #BDD7E7;
     display: grid;
     place-items: center;
@@ -44,7 +39,7 @@ body {
 }
 
 input {
-    width: 250px;
+    width: 350px;
     height: 30px;
     border: none;
     border-radius: 5px;
@@ -52,7 +47,12 @@ input {
 }
 
 .label {
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+label {
+    font-size: 14px;
+    margin-left: 5px;
 }
 
 button {
@@ -63,13 +63,14 @@ button {
     border: none;
     color: white;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 a {
     padding-left: 10px;
     color: white;
     cursor: pointer;
+    font-size: 14px;;
 }
 
 .btn {
@@ -79,18 +80,11 @@ a {
     gap: 5px;
 }
 
-/*
-span {
-    text-decoration: underline;
-}
-*/
-
-
-h4 {
+h3 {
     padding-top: 10px;
 }
 
-/* Responsive */
+/* Responsive on mobile */
 
 @media (max-width: 600px) {
     body {
@@ -100,6 +94,18 @@ h4 {
 
     .title {
         text-align: center;
-        padding: 40px;
+        padding: 50px 50px 20px 50px;
+    }
+
+    .box {
+        padding: 50px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    input {
+        width: 250px;
     }
 }
