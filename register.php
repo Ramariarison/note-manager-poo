@@ -13,8 +13,8 @@
     <div class="container">
         <div>
             <div class="title">
-                <h1>Register Page</h1>
-                <h3>Please enter your informations to register.</h3>
+                <h1><span>Register</span> Page</h1>
+                <h4>Please enter your informations to register.</h4>
             </div>
             <div class="box">
                 <div class="second-form">

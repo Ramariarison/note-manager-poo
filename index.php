@@ -13,8 +13,8 @@
     <div class="container">
         <div>
             <div class="title">
-                <h1>Welcome Back</h1>
-                <h3>Please enter your informations to login.</h3>
+                <h1><span>Welcome</span> Back</h1>
+                <h4>Please enter your informations to login.</h4>
             </div>
             <div class="box">
                 <div class="first-form">

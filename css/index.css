@@ -110,20 +110,22 @@ a {
     max-width: 350px;
 }
 
-h3 {
-    padding-top: 10px;
-}
-
 /* AJOUT: Textes responsives avec clamp() */
 h1 {
     /* AJOUT: Taille responsive entre 24px et 32px */
     font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
-h3 {
-    padding-top: 10px;
+span {
+    color: #BDD7E7;
+    font-style: italic;
+}
+
+h4 {
+    padding-top: 15px;
     /* AJOUT: Taille responsive entre 14px et 18px */
     font-size: clamp(0.9rem, 3vw, 1.1rem);
+    color: #EFF3FF;
 }
 
 /* MODIF: Media queries complètement repensées et étendues */
