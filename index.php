@@ -14,12 +14,12 @@
         <div>
             <div class="title">
                 <h1>Welcome Back</h1>
-                <h4>Please enter your details to login.</h4>
+                <h3>Please enter your details to login.</h3>
             </div>
             <div class="box">
                 <div class="second-form">
                     <form action="controllers/authentication.php" method="post">
-                        <div class="label">
+                        <div class="first-label">
                             <label for="username">Email address</label>
                             <br>
                                 <input type="text" placeholder="  email@address.com" required>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="btn">
                             <div><button type="submit">Login</button></div>
-                            <div><a href="register.php">Register ?</a></div>
+                            <div><a href="register.php">Want to register ?</a></div>
                         </div>
                     </form>
                 </div>

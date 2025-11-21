@@ -10,12 +10,12 @@
     <div>
         <div class="title">
             <h1>Register Page</h1>
-            <h4>Please enter your details to register.</h4>
+            <h3>Please enter your details to register.</h3>
         </div>
         <div class="box">
             <div class="first-form">
                 <form action="controllers/authentication.php" method="post">
-                    <div class="label">
+                    <div class="first-label">
                         <label for="username">Username</label>
                         <br>
                             <input type="text" placeholder="  Vintsy">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="btn">
                         <button type="submit">Register</button>
-                        <div><a href="index.php">Login ?</a></div>
+                        <div><a href="index.php">Want to login ?</a></div>
                     </div>
                 </form>
             </div>
