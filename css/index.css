@@ -52,7 +52,7 @@ input {
     /* MODIF: Largeur flexible avec maximum */
     width: 100%;
     min-width: 300px;
-    padding: 12px;
+    padding: 10px;
     border: none;
     border-radius: 3px;
     margin-top: 3px;
@@ -80,7 +80,7 @@ label {
 
 button {
     width: 90px;
-    padding: 12px 15px 12px 15px;
+    padding: 10px 15px 10px 15px;
     border-radius: 5px;
     background-color: #2171B5;
     border: none;
