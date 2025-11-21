@@ -14,15 +14,15 @@
         <div>
             <div class="title">
                 <h1>Welcome Back</h1>
-                <h3>Please enter your details to login.</h3>
+                <h3>Please enter your informations to login.</h3>
             </div>
             <div class="box">
-                <div class="second-form">
+                <div class="first-form">
                     <form action="controllers/authentication.php" method="post">
                         <div class="first-label">
                             <label for="username">Email address</label>
                             <br>
-                                <input type="text" placeholder="  email@address.com" required>
+                                <input type="text" placeholder="email@address.com" required>
                             <br>
                         </div>
                         <div class="label">

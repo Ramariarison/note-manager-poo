@@ -7,6 +7,8 @@
 
 body {
     height: 100vh;
+    /* MODIF: Changé pour min-height pour supporter le contenu sur mobile */
+    min-height: 100vh;
     background-color: #BDD7E7;
     display: grid;
     place-items: center;
@@ -14,8 +16,14 @@ body {
     padding: 20px;
 }
 
+/* MODIF: Container complètement repensé pour le responsive */
 .container {
+    /* AJOUT: Prend toute la largeur et limite l'expansion */
+    width: 100%;
+    max-width: 500px;
     display: flex;
+    /* AJOUT: Organisation verticale sur tous écrans */
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -27,27 +35,42 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* AJOUT: S'assure que la box prend toute la largeur du container */
+    width: 100%;
 }
 
 .title {
     width: 100%;
-    max-width: 500px;
     padding: 50px 70px 20px 70px;
     border-radius: 5px 5px 0 0;
     background-color: #2171B5;
     text-align: center;
 }
 
+/* MODIF: Input rendu responsive */
 input {
-    width: 350px;
-    height: 30px;
+    /* MODIF: Largeur flexible avec maximum */
+    width: 100%;
+    min-width: 300px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    margin-top: 5px;
+    border-radius: 3px;
+    margin-top: 3px;
+    outline: none;
+    background: #EFF3FF;
 }
 
 .label {
     margin-top: 10px;
+    /* AJOUT: Assure que le label s'adapte aussi */
+    width: 100%;
+    max-width: 350px;
+}
+
+/* AJOUT: Nouvelle classe pour le premier label */
+.first-label {
+    width: 100%;
+    max-width: 350px;
 }
 
 label {
@@ -57,7 +80,7 @@ label {
 
 button {
     width: 90px;
-    padding: 12px 15px 10px 15px;
+    padding: 12px 15px 12px 15px;
     border-radius: 5px;
     background-color: #2171B5;
     border: none;
@@ -70,42 +93,98 @@ a {
     padding-left: 10px;
     color: white;
     cursor: pointer;
-    font-size: 14px;;
+    font-size: 14px;
+    /* AJOUT: Pour le centrage sur mobile */
+    text-align: center;
+    display: block;
 }
 
+/* MODIF: Bouton adapté pour mobile */
 .btn {
     margin-top: 20px;
     display: flex;
     align-items: center;
     gap: 5px;
+    /* AJOUT: Prend toute la largeur et limite l'expansion */
+    width: 100%;
+    max-width: 350px;
 }
 
 h3 {
     padding-top: 10px;
 }
 
-/* Responsive on mobile */
+/* AJOUT: Textes responsives avec clamp() */
+h1 {
+    /* AJOUT: Taille responsive entre 24px et 32px */
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
 
-@media (max-width: 600px) {
+h3 {
+    padding-top: 10px;
+    /* AJOUT: Taille responsive entre 14px et 18px */
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+}
+
+/* MODIF: Media queries complètement repensées et étendues */
+
+/* NOUVEAU: Point de rupture tablette (768px) */
+@media (max-width: 768px) {
     body {
-        flex-direction: column;
-        align-items: center;
+        padding: 15px; /* Réduction des marges */
     }
-
+    
+    .container {
+        max-width: 100%; /* Utilise toute la largeur disponible */
+    }
+    
     .title {
-        text-align: center;
-        padding: 50px 50px 20px 50px;
+        padding: 30px 20px 15px 20px; /* Padding réduit */
     }
-
+    
     .box {
-        padding: 50px;
+        padding: 30px 20px; /* Réduction espace interne */
     }
-
-    h3 {
-        font-size: 14px;
-    }
-
+    
     input {
-        width: 250px;
+        max-width: 100%; /* Champs prennent toute la largeur */
+    }
+    
+    .label, .first-label {
+        max-width: 100%; /* Labels s'adaptent aussi */
+    }
+    
+    .btn {
+        flex-direction: column; /* ↕ Bouton et lien en colonne */
+        gap: 15px; /* Espacement vertical augmenté */
+    }
+    
+    a {
+        padding-left: 0; /* Supprime décalage gauche */
+        text-align: center; /* Centre le texte */
+    }
+}
+
+/* MODIF: Point de rupture mobile étendu (480px au lieu de 600px) */
+@media (max-width: 480px) {
+    .title {
+        padding: 25px 15px 15px 15px; /* Padding encore réduit */
+    }
+    
+    .box {
+        padding: 25px 15px; /* 🎯 Encore plus compact */
+    }
+    
+    input {
+        padding: 10px; /* 👆 Réduction hauteur interne champs */
+    }
+    
+    button {
+        width: 100%; /* Bouton prend toute la largeur */
+        max-width: 200px; /* Mais limité à 200px */
+    }
+    
+    .btn {
+        gap: 12px; /* Espacement légèrement réduit */
     }
 }
