@@ -134,10 +134,6 @@ h3 {
         padding: 15px; /* Réduction des marges */
     }
     
-    .container {
-        max-width: 100%; /* Utilise toute la largeur disponible */
-    }
-    
     .title {
         padding: 30px 20px 15px 20px; /* Padding réduit */
     }
@@ -171,12 +167,16 @@ h3 {
         padding: 25px 15px 15px 15px; /* Padding encore réduit */
     }
     
+    .container {
+        max-width: 100%; /* Utilise toute la largeur disponible */
+    }
+
     .box {
-        padding: 25px 15px; /* 🎯 Encore plus compact */
+        padding: 25px 15px; /* Encore plus compact */
     }
     
     input {
-        padding: 10px; /* 👆 Réduction hauteur interne champs */
+        padding: 10px; /* Réduction hauteur interne champs */
     }
     
     button {
