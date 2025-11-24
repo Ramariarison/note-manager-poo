@@ -7,7 +7,7 @@
 
 body {
     height: 100vh;
-    /* MODIF: Changé pour min-height pour supporter le contenu sur mobile */
+    /* min-height pour supporter le contenu sur mobile */
     min-height: 100vh;
     background-color: #BDD7E7;
     display: grid;
@@ -16,13 +16,13 @@ body {
     padding: 20px;
 }
 
-/* MODIF: Container complètement repensé pour le responsive */
+/* Container complètement repensé pour le responsive */
 .container {
-    /* AJOUT: Prend toute la largeur et limite l'expansion */
+    /* Prend toute la largeur et limite l'expansion */
     width: 100%;
     max-width: 450px;
     display: flex;
-    /* AJOUT: Organisation verticale sur tous écrans */
+    /* Organisation verticale sur tous écrans */
     flex-direction: column;
     gap: 10px;
 }
@@ -35,7 +35,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* AJOUT: S'assure que la box prend toute la largeur du container */
+    /* S'assure que la box prend toute la largeur du container */
     width: 100%;
 }
 
@@ -47,9 +47,9 @@ body {
     text-align: center;
 }
 
-/* MODIF: Input rendu responsive */
+/* Input rendu responsive */
 input {
-    /* MODIF: Largeur flexible avec maximum */
+    /* Largeur flexible avec maximum */
     width: 100%;
     min-width: 300px;
     padding: 10px;
@@ -62,12 +62,12 @@ input {
 
 .label {
     margin-top: 10px;
-    /* AJOUT: Assure que le label s'adapte aussi */
+    /* Assure que le label s'adapte aussi */
     width: 100%;
     max-width: 350px;
 }
 
-/* AJOUT: Nouvelle classe pour le premier label */
+/* Nouvelle classe pour le premier label */
 .first-label {
     width: 100%;
     max-width: 350px;
@@ -112,7 +112,7 @@ label {
     color: #333;
 }
 
-/* AJOUT: Classe pour l'état "masqué" - œil barré */
+/* Classe pour l'état "masqué" c a d œil barré */
 #toggle.hide .fa-eye {
     display: none;
 }
@@ -141,25 +141,25 @@ a {
     color: white;
     cursor: pointer;
     font-size: 14px;
-    /* AJOUT: Pour le centrage sur mobile */
+    /* Pour le centrage sur mobile */
     text-align: center;
     display: block;
 }
 
-/* MODIF: Bouton adapté pour mobile */
+/* Bouton adapté pour mobile */
 .btn {
     margin-top: 20px;
     display: flex;
     align-items: center;
     gap: 5px;
-    /* AJOUT: Prend toute la largeur et limite l'expansion */
+    /* Prend toute la largeur et limite l'expansion */
     width: 100%;
     max-width: 350px;
 }
 
-/* AJOUT: Textes responsives avec clamp() */
+/* Textes responsives avec clamp() */
 h1 {
-    /* AJOUT: Taille responsive entre 24px et 32px */
+    /* Taille responsive entre 24px et 32px */
     font-size: clamp(1.5rem, 4vw, 2rem);
     text-transform: uppercase;
 }
@@ -171,14 +171,12 @@ span {
 
 h4 {
     padding-top: 10px;
-    /* AJOUT: Taille responsive entre 14px et 18px */
+    /* Taille responsive entre 14px et 18px */
     font-size: clamp(0.9rem, 3vw, 1.1rem);
     color: #EFF3FF;
 }
 
-/* MODIF: Media queries complètement repensées et étendues */
-
-/* NOUVEAU: Point de rupture tablette (768px) */
+/* Point de rupture tablette (768px) */
 @media (max-width: 768px) {
     body {
         padding: 15px; /* Réduction des marges */
@@ -201,7 +199,7 @@ h4 {
     }
     
     .btn {
-        flex-direction: column; /* ↕ Bouton et lien en colonne */
+        flex-direction: column; /* Bouton et lien en colonne */
         gap: 15px; /* Espacement vertical augmenté */
     }
     
@@ -211,7 +209,7 @@ h4 {
     }
 }
 
-/* MODIF: Point de rupture mobile étendu (480px au lieu de 600px) */
+/* Point de rupture mobile (480px) */
 @media (max-width: 480px) {
     .title {
         padding: 25px 15px 15px 15px; /* Padding encore réduit */

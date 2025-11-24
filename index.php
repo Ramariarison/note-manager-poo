@@ -53,14 +53,11 @@
         const toggleIcon = toggle.querySelector('i');
         
         toggle.addEventListener('click', function() {
-            // Basculer entre type password et text
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
             
-            // Basculer la classe pour changer l'icône
             this.classList.toggle('hide');
             
-            // Alternative: Changer directement la classe Font Awesome
             toggleIcon.classList.toggle('fa-eye');
             toggleIcon.classList.toggle('fa-eye-slash');
         });

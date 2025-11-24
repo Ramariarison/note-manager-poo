@@ -62,22 +62,17 @@
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Sélectionner tous les toggles
         const toggles = document.querySelectorAll('.toggle');
         
-        // Pour chaque toggle
         toggles.forEach(toggle => {
             toggle.addEventListener('click', function() {
-                // Récupérer l'ID du champ cible depuis l'attribut data-target
                 const targetId = this.getAttribute('data-target');
                 const passwordInput = document.getElementById(targetId);
                 const toggleIcon = this.querySelector('i');
                 
-                // Basculer entre type password et text
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordInput.setAttribute('type', type);
                 
-                // Changer l'icône Font Awesome
                 if (toggleIcon.classList.contains('fa-eye')) {
                     toggleIcon.classList.remove('fa-eye');
                     toggleIcon.classList.add('fa-eye-slash');
