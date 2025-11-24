@@ -20,7 +20,7 @@ body {
 .container {
     /* AJOUT: Prend toute la largeur et limite l'expansion */
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
     display: flex;
     /* AJOUT: Organisation verticale sur tous écrans */
     flex-direction: column;
@@ -78,6 +78,53 @@ label {
     margin-left: 5px;
 }
 
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.label input[type="password"] {
+    width: 100%;
+    padding-right: 40px;
+}
+
+#toggle, .toggle {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+#toggle:hover {
+    color: #333;
+}
+
+/* AJOUT: Classe pour l'état "masqué" - œil barré */
+#toggle.hide .fa-eye {
+    display: none;
+}
+
+#toggle .fa-eye-slash {
+    display: none;
+}
+
+#toggle.hide .fa-eye-slash {
+    display: block;
+}
+
 button {
     width: 90px;
     padding: 10px 15px 10px 15px;
@@ -114,6 +161,7 @@ a {
 h1 {
     /* AJOUT: Taille responsive entre 24px et 32px */
     font-size: clamp(1.5rem, 4vw, 2rem);
+    text-transform: uppercase;
 }
 
 span {
@@ -122,7 +170,7 @@ span {
 }
 
 h4 {
-    padding-top: 15px;
+    padding-top: 10px;
     /* AJOUT: Taille responsive entre 14px et 18px */
     font-size: clamp(0.9rem, 3vw, 1.1rem);
     color: #EFF3FF;
