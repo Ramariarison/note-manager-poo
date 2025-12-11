@@ -112,6 +112,10 @@ label {
     color: #333;
 }
 
+.toggle:hover {
+    color: #333;
+}
+
 /* Classe pour l'état "masqué" c a d œil barré */
 #toggle.hide .fa-eye {
     display: none;

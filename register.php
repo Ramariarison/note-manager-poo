@@ -23,13 +23,13 @@
                         <div class="first-label">
                             <label for="username">Username</label>
                             <br>
-                                <input type="text" placeholder="Vintsy">
+                                <input type="text" placeholder="Vintsy" required>
                             <br>
                         </div>
                         <div class="label">
                             <label for="email">Email address</label>
                             <br>
-                                <input type="email" placeholder="email@address.com">
+                                <input type="email" placeholder="email@address.com" required>
                             <br>
                         </div>
                         <div class="label">
