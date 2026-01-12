@@ -10,33 +10,44 @@
     <title>Accueil</title>
 </head>
 <body>
-    <div class="container">
-        <div class="top">
-            <nav>
-                <div class="logo">note<span class="second">me</span></div>
-                <ul class="navlink">
-                    <li><a href="#">Click here to show more details</a></li>
-                </ul>
-                <div class="btns">
-                    <button class="btn">Login</button>
-                    <a class="link" href="">Register ?</a>
+    <header class="navbar">
+        <nav>
+            <div class="logo">note<span class="second">me</span></div>
+
+            <ul class="navlink">
+                <li><a href="#">Click here to show more details</a></li>
+            </ul>
+
+            <div class="btns">
+                <button class="btn">Login</button>
+                <a class="link" href="#">Register ?</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>Welcome to our platform</h1>
+                    <p class="hero-description">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization. Create, edit, and 
+                        easily find your notes in a fast, intuitive, and secure environment, 
+                        accessible anytime.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-hero">Login</a>
+                        <a href="#" class="btn-hero outline">Register</a>
+                    </div>
                 </div>
-            </nav>
-        </div>
-        <!--<div class="center">
-            <div class="title">
-                <h1>Bienvenue sur notre plateforme</h1>
+
+                <div class="hero-image">
+                    <img src="assets/images/note.png" alt="Gestion de notes">
+                </div>
             </div>
-            <div class="message">
-                <p>
-                    C'est une plateforme dédiée à la gestion de notes personnelles.
-                </p>
-            </div>
-            <div class="bottom">
-                <button>Login</button>
-                <button>register</button>
-            </div>
-        </div>-->
-    </div>
+        </section>
+    </main>
 </body>
 </html>
