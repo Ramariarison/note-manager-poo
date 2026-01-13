@@ -14,10 +14,6 @@
         <nav>
             <div class="logo">note<span class="second">me</span></div>
 
-            <ul class="navlink">
-                <li><a href="#">Click here to show more details</a></li>
-            </ul>
-
             <div class="btns">
                 <button class="btn">Login</button>
                 <a class="link" href="#">Register ?</a>

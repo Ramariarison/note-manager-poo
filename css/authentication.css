@@ -30,7 +30,9 @@ body {
 .box {
     padding: 50px;
     border-radius: 0 0 5px 5px;
-    background-color: #6BAED6;
+    /*background-color: #6BAED6;*/
+    background-color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,15 +51,22 @@ body {
 
 /* Input rendu responsive */
 input {
-    /* Largeur flexible avec maximum */
     width: 100%;
     min-width: 300px;
     padding: 10px;
-    border: none;
+    border: 1px solid #D1D5DB; /* Bordure grise légère */
     border-radius: 3px;
     margin-top: 3px;
     outline: none;
-    background: #EFF3FF;
+    background: white; /* Fond blanc */
+    color: #333; /* Texte foncé pour contraste */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Légère ombre pour profondeur */
+}
+
+/* Effet au focus */
+input:focus {
+    border-color: #3B82F6; /* Bordure bleue au focus */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); /* Lueur bleue subtile */
 }
 
 .label {
@@ -142,7 +151,7 @@ button {
 
 a {
     padding-left: 10px;
-    color: white;
+    color: black;
     cursor: pointer;
     font-size: 14px;
     /* Pour le centrage sur mobile */
