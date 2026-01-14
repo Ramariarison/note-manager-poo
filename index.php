@@ -12,7 +12,7 @@
 <body>
     <header class="navbar">
         <nav>
-            <div class="logo">note<span class="second">me</span></div>
+            <div class="logo">note<span class="second">me</span>.</div>
 
             <div class="btns">
                 <button class="btn">Login</button>
