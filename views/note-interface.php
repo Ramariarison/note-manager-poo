@@ -58,9 +58,311 @@
                 </div>
             </div>
         </aside>
-        <main class="right-content">
-            
-        </main>
+        <div class="page-content">
+            <div class="page-header">
+                <!--
+                <h2>My notes</h2>
+                -->
+                <div class="btn-add-card">
+                    <div class="btn-add">
+                        <i class="fa fa-plus"></i>
+                        New note
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <!-- Recherche -->
+                     <div class="search-box">
+                        <i class="fa fa-search"></i>
+                        <input type="text" placeholder="Search">
+                     </div>
+                     <!-- Filtre -->
+                      <div class="filter-box">
+                        <i class="fa fa-filter"></i>
+                        <select>
+                            <option value="None">Sort</option>
+                            <option value="Critical">Critical</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                      </div>
+                      <!-- Bouton d'ajout
+                       <div class="btn-add">
+                            <i class="fa fa-plus"></i>
+                            Add note
+                       </div>
+                       -->
+                </div>
+            </div>
+            <!-- Liste de notes -->
+             <div class="notes-grid">
+                <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization. A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+                 <!-- Card -->
+                 <div class="note-card">
+                    <div class="note-header">
+                        <h3>My first note</h3>
+                        <span class="note-date">25 December 2026</span>
+                    </div>
+                    <p class="note-text">
+                        A modern application dedicated to managing your personal notes, 
+                        designed to simplify your daily organization.
+                    </p>
+                    <div class="note-actions">
+                        <button class="btn view">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn edit">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button class="btn delete">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                 </div>
+             </div>
+        </div>
     </div>
 </body>
 </html>
