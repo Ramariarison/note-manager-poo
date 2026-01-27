@@ -24,6 +24,10 @@ html, body {
     /* A retenir */
     display: flex;
     flex-direction: column;
+
+    /* Pas de scroll pour le sidebar */
+    height: 100vh;
+    overflow: hidden;
 }
 
 .hero-sidebar {
