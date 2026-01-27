@@ -5,6 +5,13 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* Bloquer le scrollbar global */
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
 .layout {
     display: flex;
     min-height: 100vh;
@@ -17,10 +24,14 @@
     /* A retenir */
     display: flex;
     flex-direction: column;
+
+    /* Pas de scroll pour le sidebar */
+    height: 100vh;
+    overflow: hidden;
 }
 
 .hero-sidebar {
-    background-color: #2171B5;
+    background: linear-gradient(135deg, #2171B5, #3A8DDE);
     min-height: 250px;
     display: flex;
     flex-direction: column;
@@ -64,7 +75,7 @@
 
 .sidebar-links ul li {
     list-style: none;
-    background: #2171B5;
+    background: linear-gradient(135deg, #2171B5, #3A8DDE);
     border-radius: 6px;
     margin-bottom: 12px;
 }
@@ -114,7 +125,7 @@
 }
 
 .logout-button:hover {
-    background: #2171B5;
+    background: linear-gradient(135deg, #2171B5, #3A8DDE);
     color: white;
 }
 
@@ -129,6 +140,7 @@
     background: #e6f2f8;
     padding: 24px;
     overflow-y: auto;
+    height: 100vh;
 }
 
 /* Header */
@@ -183,38 +195,44 @@
     font-size: 14px;
 }
 
+.page-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #0f172a;
+
+    padding-left: 12px;
+    border-left: 4px solid #2171B5;
+}
+
 .btn-add {
-    /*
-    background: #2171B5;
-    color: #fff;
-    border: none;
-    */
-    padding: 10px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    /**/
-    border: 1px solid #2171B5;
-    color: #2171B5;
-    background: none;
-    transition: all 0.2s ease;
+    
+    padding: 10px 18px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #ffffff;
+    background: linear-gradient(135deg, #2171B5, #3A8DDE);
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn-add:hover {
-    color: white;
-    background: #2171B5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(33, 113, 181, 0.3);
 }
 
-/*
-.btn-add-card {
-    background: white;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+.btn-add i {
+    font-size: 14px;
 }
-*/
 
 .notes-grid {
     display: grid;
@@ -231,7 +249,10 @@
 
     gap: 18px; /* + respirant */
 
-    max-width: 360px;
+    /* Problème d'alignement à droite résolu */
+    max-width: 400px;
+    /* max-width: 360px; */
+
     padding: 24px;
 
     background: #ffffff;
@@ -306,7 +327,7 @@
 }
 
 .note-date span {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .note-hour span {
@@ -315,20 +336,18 @@
 }
 
 .note-title {
-    display: inline-flex;
-    align-items: center;
-
-    padding: 6px 12px;
-    background: #f1f5f9;
-    border-radius: 8px;
-
-    max-width: fit-content;
+    background: transparent;
+    padding: 0;
 }
 
 .note-title span {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
-    color: #0f172a;
+    color: #334155;
+
+    background: #eef2ff;
+    padding: 4px 10px;
+    border-radius: 6px;
 }
 
 .note-content span {
@@ -353,37 +372,73 @@
 
 .actions-btns {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-actions {
+    display: flex;
     gap: 10px;
 }
 
-.actions-btns button {
-    flex: 1;
-    padding: 8px 0;
+.left-actions button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 
+    padding: 8px 14px;
     font-size: 13px;
-    border-radius: 8px;
+    border-radius: 6px;
     border: none;
-
     cursor: pointer;
-    transition: 0.2s ease, color 0.2s ease;
 }
 
-.actions-btns .view {
+.left-actions button i {
+    font-size: 14px;
+}
+
+.left-actions button:hover {
+    transform: translateY(-1px);
+}
+/* VIEW — Bleu */
+.left-actions .view {
     background: #e0f2fe;
     color: #0369a1;
 }
 
-.actions-btns .edit {
-    background: #ecfeff;
-    color: #0e7490;
+.left-actions .view:hover {
+    background: #bae6fd;
 }
 
-.actions-btns .delete {
-    background: #fee2e2;
-    color: #b91c1c;
+/* EDIT — Vert */
+.left-actions .edit {
+    background: #dcfce7;
+    color: #15803d;
 }
 
-.actions-btns button:hover {
-    opacity: 0.85;
+.left-actions .edit:hover {
+    background: #bbf7d0;
 }
 
+.delete-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dc2626;
+    color: white;
+
+    border-radius: 50%;
+    border: none;
+
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.delete-icon:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+}
