@@ -396,10 +396,24 @@ html, body {
 .left-actions button:hover {
     transform: translateY(-1px);
 }
-
-.left-actions .view, .edit {
+/* VIEW — Bleu */
+.left-actions .view {
     background: #e0f2fe;
     color: #0369a1;
+}
+
+.left-actions .view:hover {
+    background: #bae6fd;
+}
+
+/* EDIT — Vert */
+.left-actions .edit {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.left-actions .edit:hover {
+    background: #bbf7d0;
 }
 
 .delete-icon {
