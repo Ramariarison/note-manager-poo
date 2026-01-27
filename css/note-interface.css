@@ -31,7 +31,7 @@ html, body {
 }
 
 .hero-sidebar {
-    background-color: #2171B5;
+    background: linear-gradient(135deg, #2171B5, #3A8DDE);
     min-height: 250px;
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@ html, body {
 
 .sidebar-links ul li {
     list-style: none;
-    background: #2171B5;
+    background: linear-gradient(135deg, #2171B5, #3A8DDE);
     border-radius: 6px;
     margin-bottom: 12px;
 }
@@ -125,7 +125,7 @@ html, body {
 }
 
 .logout-button:hover {
-    background: #2171B5;
+    background: linear-gradient(135deg, #2171B5, #3A8DDE);
     color: white;
 }
 
