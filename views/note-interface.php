@@ -96,269 +96,180 @@
             </div>
             <!-- Liste de notes -->
              <div class="notes-grid">
-                <!-- Card -->
-                 <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
-                    </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization. A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                 </div>
                  <!-- Card -->
                  <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
+                    <div class="card-header">
+                        <div class="note-priority">
+                            <span class="priority-level">H</span>
+                        </div>
+                        <div class="btn-to-pin-note">
+                            <button class="pin-note">pin note</button>
+                        </div>
                     </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
+                    <div class="card-body">
+                        <div class="note-date-and-hour">
+                            <div class="note-date">
+                                <span class="date">23-11-2020</span>
+                            </div>
+                            <div class="note-hour">
+                                <span class="hour">15h:30min</span>
+                            </div>
+                        </div>
+                        <div class="note-title">
+                            <span>Amazon</span>
+                        </div>
+                        <div class="note-content">
+                            <span class="content">
+                                L'amour est un sentiment profond d'affection et d'attachement, 
+                                unissant deux personnes par un désir de proximité physique, 
+                                intellectuelle ou émotionnelle.
+                            </span>
+                        </div>
                     </div>
-                 </div>
-                 <!-- Card -->
-                 <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
-                    </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                 </div>
-                 <!-- Card -->
-                 <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
-                    </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
+                    <div class="card-footer">
+                        <div class="actions-btns">
+                            <button class="view">
+                                <a href="#">view</a>
+                            </button>
+                            <button class="edit">
+                                <a href="#">edit</a>
+                            </button>
+                            <button class="delete">
+                                <a href="#">delete</a>
+                            </button>
+                        </div>
                     </div>
                  </div>
-                 <!-- Card -->
+                                  <!-- Card -->
                  <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
+                    <div class="card-header">
+                        <div class="note-priority">
+                            <span class="priority-level">H</span>
+                        </div>
+                        <div class="btn-to-pin-note">
+                            <button class="pin-note">pin note</button>
+                        </div>
                     </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
+                    <div class="card-body">
+                        <div class="note-date-and-hour">
+                            <div class="note-date">
+                                <span class="date">23-11-2020</span>
+                            </div>
+                            <div class="note-hour">
+                                <span class="hour">15h:30min</span>
+                            </div>
+                        </div>
+                        <div class="note-title">
+                            <span>Amazon</span>
+                        </div>
+                        <div class="note-content">
+                            <span class="content">
+                                L'amour est un sentiment profond d'affection et d'attachement, 
+                                unissant deux personnes par un désir de proximité physique, 
+                                intellectuelle ou émotionnelle.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="actions-btns">
+                            <button class="view">
+                                <a href="#">view</a>
+                            </button>
+                            <button class="edit">
+                                <a href="#">edit</a>
+                            </button>
+                            <button class="delete">
+                                <a href="#">delete</a>
+                            </button>
+                        </div>
                     </div>
                  </div>
-                 <!-- Card -->
+                                  <!-- Card -->
                  <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
+                    <div class="card-header">
+                        <div class="note-priority">
+                            <span class="priority-level">H</span>
+                        </div>
+                        <div class="btn-to-pin-note">
+                            <button class="pin-note">pin note</button>
+                        </div>
                     </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
+                    <div class="card-body">
+                        <div class="note-date-and-hour">
+                            <div class="note-date">
+                                <span class="date">23-11-2020</span>
+                            </div>
+                            <div class="note-hour">
+                                <span class="hour">15h:30min</span>
+                            </div>
+                        </div>
+                        <div class="note-title">
+                            <span>Amazon</span>
+                        </div>
+                        <div class="note-content">
+                            <span class="content">
+                                L'amour est un sentiment profond d'affection et d'attachement, 
+                                unissant deux personnes par un désir de proximité physique, 
+                                intellectuelle ou émotionnelle.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="actions-btns">
+                            <button class="view">
+                                <a href="#">view</a>
+                            </button>
+                            <button class="edit">
+                                <a href="#">edit</a>
+                            </button>
+                            <button class="delete">
+                                <a href="#">delete</a>
+                            </button>
+                        </div>
                     </div>
                  </div>
-                 <!-- Card -->
+                                  <!-- Card -->
                  <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
+                    <div class="card-header">
+                        <div class="note-priority">
+                            <span class="priority-level">H</span>
+                        </div>
+                        <div class="btn-to-pin-note">
+                            <button class="pin-note">pin note</button>
+                        </div>
                     </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
+                    <div class="card-body">
+                        <div class="note-date-and-hour">
+                            <div class="note-date">
+                                <span class="date">23-11-2020</span>
+                            </div>
+                            <div class="note-hour">
+                                <span class="hour">15h:30min</span>
+                            </div>
+                        </div>
+                        <div class="note-title">
+                            <span>Amazon</span>
+                        </div>
+                        <div class="note-content">
+                            <span class="content">
+                                L'amour est un sentiment profond d'affection et d'attachement, 
+                                unissant deux personnes par un désir de proximité physique, 
+                                intellectuelle ou émotionnelle.
+                            </span>
+                        </div>
                     </div>
-                 </div>
-                 <!-- Card -->
-                 <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
-                    </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                 </div>
-                 <!-- Card -->
-                 <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
-                    </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                 </div>
-                 <!-- Card -->
-                 <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
-                    </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                 </div>
-                 <!-- Card -->
-                 <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
-                    </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                 </div>
-                 <!-- Card -->
-                 <div class="note-card">
-                    <div class="note-header">
-                        <h3>My first note</h3>
-                        <span class="note-date">25 December 2026</span>
-                    </div>
-                    <p class="note-text">
-                        A modern application dedicated to managing your personal notes, 
-                        designed to simplify your daily organization.
-                    </p>
-                    <div class="note-actions">
-                        <button class="btn view">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <button class="btn edit">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button class="btn delete">
-                            <i class="fa fa-trash"></i>
-                        </button>
+                    <div class="card-footer">
+                        <div class="actions-btns">
+                            <button class="view">
+                                <a href="#">view</a>
+                            </button>
+                            <button class="edit">
+                                <a href="#">edit</a>
+                            </button>
+                            <button class="delete">
+                                <a href="#">delete</a>
+                            </button>
+                        </div>
                     </div>
                  </div>
              </div>
