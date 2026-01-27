@@ -60,15 +60,15 @@
         </aside>
         <div class="page-content">
             <div class="page-header">
+                <h2 class="page-title">My notes</h2>
                 <!--
-                <h2>My notes</h2>
-                -->
                 <div class="btn-add-card">
                     <div class="btn-add">
                         <i class="fa fa-plus"></i>
                         New note
                     </div>
                 </div>
+                -->
                 <div class="header-actions">
                     <!-- Recherche -->
                     <div class="search-box">
@@ -86,12 +86,11 @@
                             <option value="Low">Low</option>
                         </select>
                     </div>
-                    <!-- Bouton d'ajout
+                    <!-- Bouton d'ajout -->
                     <div class="btn-add">
                             <i class="fa fa-plus"></i>
                             Add note
                     </div>
-                    -->
                 </div>
             </div>
             <!-- Liste de notes -->
