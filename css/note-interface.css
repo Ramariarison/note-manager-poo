@@ -5,6 +5,13 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* Bloquer le scrollbar global */
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
 .layout {
     display: flex;
     min-height: 100vh;
