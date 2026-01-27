@@ -140,6 +140,7 @@ html, body {
     background: #e6f2f8;
     padding: 24px;
     overflow-y: auto;
+    height: 100vh;
 }
 
 /* Header */
