@@ -98,7 +98,179 @@
              <div class="notes-grid">
                  <!-- Card -->
                  <div class="note-card">
-                    
+                    <div class="card-header">
+                        <div class="note-priority">
+                            <span class="priority-level">H</span>
+                        </div>
+                        <div class="btn-to-pin-note">
+                            <button class="pin-note">pin note</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="note-date-and-hour">
+                            <div class="note-date">
+                                <span class="date">23-11-2020</span>
+                            </div>
+                            <div class="note-hour">
+                                <span class="hour">15h:30min</span>
+                            </div>
+                        </div>
+                        <div class="note-title">
+                            <span>Amazon</span>
+                        </div>
+                        <div class="note-content">
+                            <span class="content">
+                                L'amour est un sentiment profond d'affection et d'attachement, 
+                                unissant deux personnes par un désir de proximité physique, 
+                                intellectuelle ou émotionnelle.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="actions-btns">
+                            <button class="view">
+                                <a href="#">view</a>
+                            </button>
+                            <button class="edit">
+                                <a href="#">edit</a>
+                            </button>
+                            <button class="delete">
+                                <a href="#">delete</a>
+                            </button>
+                        </div>
+                    </div>
+                 </div>
+                                  <!-- Card -->
+                 <div class="note-card">
+                    <div class="card-header">
+                        <div class="note-priority">
+                            <span class="priority-level">H</span>
+                        </div>
+                        <div class="btn-to-pin-note">
+                            <button class="pin-note">pin note</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="note-date-and-hour">
+                            <div class="note-date">
+                                <span class="date">23-11-2020</span>
+                            </div>
+                            <div class="note-hour">
+                                <span class="hour">15h:30min</span>
+                            </div>
+                        </div>
+                        <div class="note-title">
+                            <span>Amazon</span>
+                        </div>
+                        <div class="note-content">
+                            <span class="content">
+                                L'amour est un sentiment profond d'affection et d'attachement, 
+                                unissant deux personnes par un désir de proximité physique, 
+                                intellectuelle ou émotionnelle.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="actions-btns">
+                            <button class="view">
+                                <a href="#">view</a>
+                            </button>
+                            <button class="edit">
+                                <a href="#">edit</a>
+                            </button>
+                            <button class="delete">
+                                <a href="#">delete</a>
+                            </button>
+                        </div>
+                    </div>
+                 </div>
+                                  <!-- Card -->
+                 <div class="note-card">
+                    <div class="card-header">
+                        <div class="note-priority">
+                            <span class="priority-level">H</span>
+                        </div>
+                        <div class="btn-to-pin-note">
+                            <button class="pin-note">pin note</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="note-date-and-hour">
+                            <div class="note-date">
+                                <span class="date">23-11-2020</span>
+                            </div>
+                            <div class="note-hour">
+                                <span class="hour">15h:30min</span>
+                            </div>
+                        </div>
+                        <div class="note-title">
+                            <span>Amazon</span>
+                        </div>
+                        <div class="note-content">
+                            <span class="content">
+                                L'amour est un sentiment profond d'affection et d'attachement, 
+                                unissant deux personnes par un désir de proximité physique, 
+                                intellectuelle ou émotionnelle.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="actions-btns">
+                            <button class="view">
+                                <a href="#">view</a>
+                            </button>
+                            <button class="edit">
+                                <a href="#">edit</a>
+                            </button>
+                            <button class="delete">
+                                <a href="#">delete</a>
+                            </button>
+                        </div>
+                    </div>
+                 </div>
+                                  <!-- Card -->
+                 <div class="note-card">
+                    <div class="card-header">
+                        <div class="note-priority">
+                            <span class="priority-level">H</span>
+                        </div>
+                        <div class="btn-to-pin-note">
+                            <button class="pin-note">pin note</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="note-date-and-hour">
+                            <div class="note-date">
+                                <span class="date">23-11-2020</span>
+                            </div>
+                            <div class="note-hour">
+                                <span class="hour">15h:30min</span>
+                            </div>
+                        </div>
+                        <div class="note-title">
+                            <span>Amazon</span>
+                        </div>
+                        <div class="note-content">
+                            <span class="content">
+                                L'amour est un sentiment profond d'affection et d'attachement, 
+                                unissant deux personnes par un désir de proximité physique, 
+                                intellectuelle ou émotionnelle.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="actions-btns">
+                            <button class="view">
+                                <a href="#">view</a>
+                            </button>
+                            <button class="edit">
+                                <a href="#">edit</a>
+                            </button>
+                            <button class="delete">
+                                <a href="#">delete</a>
+                            </button>
+                        </div>
+                    </div>
                  </div>
              </div>
         </div>
