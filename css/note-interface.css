@@ -246,7 +246,7 @@ html, body {
     /* Problème d'alignement à droite résolu */
     max-width: 400px;
     /* max-width: 360px; */
-    
+
     padding: 24px;
 
     background: #ffffff;
@@ -321,7 +321,7 @@ html, body {
 }
 
 .note-date span {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .note-hour span {
@@ -368,37 +368,59 @@ html, body {
 
 .actions-btns {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-actions {
+    display: flex;
     gap: 10px;
 }
 
-.actions-btns button {
-    flex: 1;
-    padding: 8px 0;
+.left-actions button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 
+    padding: 8px 14px;
     font-size: 13px;
-    border-radius: 8px;
+    border-radius: 6px;
     border: none;
-
     cursor: pointer;
-    transition: 0.2s ease, color 0.2s ease;
 }
 
-.actions-btns .view {
+.left-actions button i {
+    font-size: 14px;
+}
+
+.left-actions button:hover {
+    transform: translateY(-1px);
+}
+
+.left-actions .view, .edit {
     background: #e0f2fe;
     color: #0369a1;
 }
 
-.actions-btns .edit {
-    background: #ecfeff;
-    color: #0e7490;
+.delete-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dc2626;
+    color: white;
+
+    border-radius: 50%;
+    border: none;
+
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
 }
 
-.actions-btns .delete {
-    background: #fee2e2;
-    color: #b91c1c;
+.delete-icon:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
 }
-
-.actions-btns button:hover {
-    opacity: 0.85;
-}
-
