@@ -89,7 +89,7 @@
                     <!-- Bouton d'ajout -->
                     <div class="btn-add">
                             <i class="fa fa-plus"></i>
-                            Add note
+                            <span>Add</span>
                     </div>
                 </div>
             </div>
