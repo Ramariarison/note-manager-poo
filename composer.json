@@ -1,0 +1,19 @@
+{
+    "name": "andry/note-poo",
+    "description": "Projet PHP orienté objet MVC",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Andry\\NotePoo\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ramariarison",
+            "email": "andryramariarison@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
