@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/accueil.css">
+    <link rel="stylesheet" href="../css/accueil.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="assets/images/note.png" alt="Gestion de notes">
+                    <img src="../assets/images/note.png" alt="Gestion de notes">
                 </div>
             </div>
         </section>
