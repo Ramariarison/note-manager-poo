@@ -4,7 +4,7 @@ namespace App\Core;
 
 class Router
 {
-    private array $routes = [
+    private $routes = [
         'GET' => [],
         'POST' => []
     ];
@@ -12,13 +12,13 @@ class Router
     // Declarer une route GET
     public function get(string $path, string $action)
     {
-        $this->$routes['GET'][$path] = [$action];
+        $this->routes['GET'][$path] = $action;
     }
 
     // Declare une route POST
     public function post(string $path, string $action)
     {
-        $this->$routes['POST'][$path] = [$action];
+        $this->routes['POST'][$path] = $action;
     }
 
     // Lancer le bon controller
