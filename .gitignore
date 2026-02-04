@@ -1,0 +1,8 @@
+# Dossier vendor (Composer)
+vendor/
+/vendor
+
+# Fichier d'environnement (pour Database.php)
+.env
+
+composer.lock
