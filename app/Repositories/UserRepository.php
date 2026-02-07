@@ -53,7 +53,7 @@ class UserRepository
     public function findByEmail(string $email): ?User
     {
         $sql = "SELECT * FROM users WHERE email = :email";
-        $stmt = $this->connection->prepare($sql);
+        $stmt = $this->connexion->prepare($sql);
         $stmt->execute(['email' => $email]);
 
         $data = $stmt->fetch();
@@ -64,7 +64,7 @@ class UserRepository
     public function findByUsername(string $username): ?User
     {
         $sql = "SELECT * FROM users WHERE username = :username";
-        $stmt = $this->connection->prepare($sql);
+        $stmt = $this->connexion->prepare($sql);
         $stmt->execute(['username' => $username]);
 
         $data = $stmt->fetch();
