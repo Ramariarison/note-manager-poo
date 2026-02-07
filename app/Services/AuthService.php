@@ -57,6 +57,37 @@ class AuthService
         return ['success' => false, 'errors' => ['general' => 'Erreur lors de l\'inscription']];
     }
 
+    // Connexion - Authentifier un utilisateur
+    public function login(string $email, string $password)
+    {
+        // Validation basique
+        if (empty($username) || empty($password)) {
+            return ['success' => false, 'errors' => ['general' => 'Email et mot de passe requis']];
+        }
+
+        // Trouver l'utilisateur
+        $user = $this->userRepository->findByEmail(trim($email));
+
+        if (!$user) {
+            return ['success' => false, 'errors' => ['general' => 'Identifiants incorrects']];
+        }
+
+        // Vérifier password
+        if (!$user->verifyPassword($password)) {
+            return ['success' => false, 'errors' => ['general' => 'Identifiants incorrects']];
+        }
+
+        // Création de la session
+        $this->session->set('user', $user->toArray());
+        $this->session->set('is_logged_in', true);
+
+        return [
+            'success' => true,
+            'message' => 'Connexion réussie ! Bienvenue ' . $user->getUsername(),
+            'user' => $user->toArray()
+        ];
+    }
+
     // Validation des données venant du controller qui n'est pas encore créé pour le moment
     private function validateRegistration(array $data): array
     {
