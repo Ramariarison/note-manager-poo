@@ -8,8 +8,52 @@ use App\Core\Session;
 
 class AuthService
 {
-    private UserRepository $useRepository;
+    private UserRepository $userRepository;
     private Session $session;
+
+    public function register(array $data): array
+    {
+        // Validation
+        $errors = $this->validateRegistration($data);
+
+        if (!empty($errors)) {
+            return ['success' => false, 'errors' => $errors];
+        }
+
+        // Logique pour vérifier l'unicité de l'email et de l'username
+        if ($this->userRepository->findByEmail($data['email'])) {
+            return ['success' => false, ['errors' => 'Cet email est déjà utilisé']];
+        }
+
+        if ($this->userRepository->findByUsername($data['username'])) {
+            return ['success' => false, ['errors' => 'Ce nom d\'utilisateur est déjà utilisé']];
+        }
+
+        // La partie pour créer l'utilisateur
+        try {
+            $user = new User(
+                trim($data['username']),
+                trim($data['email']),
+                $data['password']
+            );
+
+            // Sauvegarder en base de données
+            if ($this->userRepository->create($user)) {
+                // Connecter automatiquement
+                $this->session->set('user', $user->toArray());
+                $this->session->set('is_logged_in', true);
+
+                return [
+                    'success' => true,
+                    'message' => 'Inscription réussie ! Bienvenue ' . $user->getUsername(),
+                    'user' => $user->toArray()
+                ];
+            }
+
+        } catch (\Throwable $th) {
+            return ['success' => false, 'errors' => ['general' => 'erreur technique: ' . $th->getMessage()]];
+        }
+    }
 
     // Validation des données venant du controller qui n'est pas encore créé pour le moment
     private function validateRegistration(array $data): array
