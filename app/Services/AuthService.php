@@ -22,11 +22,11 @@ class AuthService
 
         // Logique pour vérifier l'unicité de l'email et de l'username
         if ($this->userRepository->findByEmail($data['email'])) {
-            return ['success' => false, ['errors' => 'Cet email est déjà utilisé']];
+            return ['success' => false, 'errors' => ['email' => 'Cet email est déjà utilisé']];
         }
 
         if ($this->userRepository->findByUsername($data['username'])) {
-            return ['success' => false, ['errors' => 'Ce nom d\'utilisateur est déjà utilisé']];
+            return ['success' => false, 'errors' => ['username' => 'Ce nom d\'utilisateur est déjà utilisé']];
         }
 
         // La partie pour créer l'utilisateur
@@ -53,6 +53,8 @@ class AuthService
         } catch (\Throwable $th) {
             return ['success' => false, 'errors' => ['general' => 'erreur technique: ' . $th->getMessage()]];
         }
+
+        return ['success' => false, 'errors' => ['general' => 'Erreur lors de l\'inscription']];
     }
 
     // Validation des données venant du controller qui n'est pas encore créé pour le moment
