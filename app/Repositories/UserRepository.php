@@ -16,18 +16,26 @@ class UserRepository
     }
 
     // Créer un utilisateur
-    public function createUser(User $user): bool
+    public function create(User $user): bool
     {
         $sql = "INSERT INTO users (username, email, password) VALUES 
         (:username, :email, :password)";
 
         $stmt = $this->connexion->prepare($sql);
 
-        return $stmt->execute([
+        $success = $stmt->execute([
             'username' => $user->getUsername(),
             'email' => $user->getEmail(),
             'password' => $user->getPassword() // Déjà hashé par le modèle User
         ]);
+
+        // Récuperation de l'id utilisateur qui est généré automatiquement après chaque insertion dans la base de données
+        if ($success) {
+            $userId = (int) $this->connexion->lastInsertId();
+            $user->setId($userId);
+        }
+
+        return $success;
     }
 
     // Trouver un utilisateur par id
@@ -75,7 +83,7 @@ class UserRepository
         $user->setId($data['id']);
         $user->setHashedPassword($data['password']); // set le hash directement
         // les dates pour createdAt et updateAt sont gérées par mysql
-        
+
         return $user;
     }
 }
