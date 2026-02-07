@@ -23,19 +23,19 @@
                         <div class="first-label">
                             <label for="username">Username</label>
                             <br>
-                                <input type="text" placeholder="Vintsy" required>
+                                <input name="username" type="text" placeholder="Vintsy" required>
                             <br>
                         </div>
                         <div class="label">
                             <label for="email">Email address</label>
                             <br>
-                                <input type="email" placeholder="email@address.com" required>
+                                <input name="email" type="email" placeholder="email@address.com" required>
                             <br>
                         </div>
                         <div class="label">
                             <label for="password">Password</label>
                             <div class="password-container">
-                                <input id="password" type="password" required>
+                                <input name="password" id="password" type="password" required>
                                 <div class="toggle" data-target="password">
                                     <i class="fa fa-eye"></i>
                                 </div>
@@ -44,7 +44,7 @@
                         <div class="label">
                             <label for="password-confirmation">Password confirmation</label>
                             <div class="password-container">
-                                <input id="password-confirmation" type="password" required>
+                                <input name="password_confirm" id="password-confirmation" type="password" required>
                                 <div class="toggle" data-target="password-confirmation">
                                     <i class="fa fa-eye"></i>
                                 </div>
