@@ -88,6 +88,35 @@ class AuthService
         ];
     }
 
+    // Déconnexion
+    public function logout(): void
+    {
+        $this->session->destroy();
+    }
+
+    // Vérification si un utilisateur est connecté
+    public function isLoggedIn(): bool
+    {
+        return $this->session->get('is_logged_in') === true;
+    }
+
+    // Méthode pour récupérer les données de l'utilisateur courant
+    public function getCurrentUser(): ?array
+    {
+        if (!$this->isLoggedIn()) {
+            return null;
+        }
+        
+        return $this->session->get('user');
+    }
+
+    // Méthode pour récupérer l'id de l'utilisateur courant
+    public function getCurrentUserId(): ?int
+    {
+        $user = $this->getCurrentUser();
+        return $user['id'] ?? null;
+    }
+
     // Validation des données venant du controller qui n'est pas encore créé pour le moment
     private function validateRegistration(array $data): array
     {
