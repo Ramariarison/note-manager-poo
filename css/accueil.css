@@ -46,6 +46,8 @@ body {
     color: #2171B5;
     border: none;
     cursor: pointer;
+    /* Bouton changé en lien du coup la nécessité d'ajouter ce style */
+    text-decoration: none;
 }
 
 .btn:hover {
