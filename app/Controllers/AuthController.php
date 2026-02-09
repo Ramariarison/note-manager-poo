@@ -66,6 +66,20 @@ class AuthController
     // Méthode pour afficher la page d'enregistrement
     public function showRegister()
     {
+        // Si déjà connecté, rediriger vers la page de notes
+        if ($this->authService->isLoggedIn()) {
+            $this->redirectWithMessage('/notes', 'info', 'Vous etes déjà inscrit et connecté !');
+        }
+
+        // Préparer les données pour la vue
+        // Récupérer les messages flash et données
+        $data = [
+            'errors' => $this->session->flash('errors') ?? [],
+            'old' => $this->session->flash('old') ?? [],
+            'success' => $this->session->flash('success'),
+            'error' => $this->session->flash('error')
+        ];
+
         require __DIR__ . '/../../views/auth/register.php';
     }
 }
