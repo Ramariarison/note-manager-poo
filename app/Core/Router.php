@@ -9,40 +9,47 @@ class Router
         'POST' => []
     ];
 
-    // Declarer une route GET
-    public function get(string $path, string $action)
+    // Déclarer une route GET
+    public function get(string $path, $action)
     {
         $this->routes['GET'][$path] = $action;
     }
 
-    // Declare une route POST
-    public function post(string $path, string $action)
+    // Déclarer une route POST
+    public function post(string $path, $action)
     {
         $this->routes['POST'][$path] = $action;
     }
 
-    // Lancer le bon controller
+    // Lancer le bon controller ou callable
     public function dispatch()
     {
         $method = $_SERVER['REQUEST_METHOD'];
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-        // Enlever /crashProject/public
+        // Enlever le préfixe
         $uri = str_replace('/crashProject/public', '', $uri);
         if ($uri === '') $uri = '/';
-        
-        if(!isset($this->routes[$method][$uri])) {
+
+        if (!isset($this->routes[$method][$uri])) {
             http_response_code(404);
             echo "404 - Page introuvable";
             return;
         }
 
-        // Separe en 2 parties
-        [$controllerName, $methodName] = explode('@', $this->routes[$method][$uri]);
+        $action = $this->routes[$method][$uri];
 
-        $controllerClass = "App\\Controllers\\" . $controllerName; // App\Controllers\HomeController
+        // Si c'est un callable (fonction ou [objet, méthode])
+        if (is_callable($action)) {
+            call_user_func($action);
+            return;
+        }
 
-        $controller = new $controllerClass();
-        $controller->$methodName(); // Appelle la méthode correspondante de la classe
+        // Sinon, traiter la string 'Controller@method'
+        [$controllerName, $methodName] = explode('@', $action);
+        $controllerClass = "App\\Controllers\\" . $controllerName;
+
+        $controller = new $controllerClass(); // Pour les contrôleurs sans dépendances
+        $controller->$methodName();
     }
 }
