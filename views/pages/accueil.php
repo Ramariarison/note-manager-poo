@@ -15,8 +15,8 @@
             <div class="logo">note<span class="second">me</span>.</div>
 
             <div class="btns">
-                <button class="btn">Login</button>
-                <a class="link" href="#">Register ?</a>
+                <a href="/crashProject/public/loginPage" class="btn">Login</a>
+                <a href="/crashProject/public/registerPage" class="link">Register ?</a>
             </div>
         </nav>
     </header>
@@ -34,8 +34,8 @@
                     </p>
 
                     <div class="hero-buttons">
-                        <a href="#" class="btn-hero">Login</a>
-                        <a href="#" class="btn-hero outline">Register</a>
+                        <a href="/crashProject/public/loginPage" class="btn-hero">Login</a>
+                        <a href="/crashProject/public/registerPage" class="btn-hero outline">Register</a>
                     </div>
                 </div>
 
