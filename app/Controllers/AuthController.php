@@ -39,7 +39,28 @@ class AuthController
     // Traiter la connexion
     public function login()
     {
-        
+        // Vérifier bien que c'est une méthode post
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $this->redirect('/login');
+        }
+
+        // Récupérer les données
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        // Appeler le service d'authentification
+        $result = $this->authService->login($email, $password);
+
+        if ($result['success']) {
+            // Succés alors on redirige l'utilisateur vers la page de notes
+            $this->session->flash('success', $result['message']);
+            $this->redirect('/notes');
+        }
+
+        // échec : sauvegarder les erreurs et réafficher le formulaire
+        $this->session->flash('errors', $result['errors']);
+        $this->session->flash('old', ['email' => $email]);
+        $this->redirect('/loginPage');
     }
 
     // Méthode pour afficher la page d'enregistrement
