@@ -8,11 +8,11 @@ use PDO;
 
 class UserRepository
 {
-    private PDO $connexion;
+    private $connection;
 
     public function __construct()
     {
-        $this->connexion = Database::getInstance()->getConnexion();
+        $this->connection = Database::getInstance()->getConnection();
     }
 
     // Créer un utilisateur
@@ -21,7 +21,7 @@ class UserRepository
         $sql = "INSERT INTO users (username, email, password) VALUES 
         (:username, :email, :password)";
 
-        $stmt = $this->connexion->prepare($sql);
+        $stmt = $this->connection->prepare($sql);
 
         $success = $stmt->execute([
             'username' => $user->getUsername(),
@@ -31,7 +31,7 @@ class UserRepository
 
         // Récuperation de l'id utilisateur qui est généré automatiquement après chaque insertion dans la base de données
         if ($success) {
-            $userId = (int) $this->connexion->lastInsertId();
+            $userId = (int) $this->connection->lastInsertId();
             $user->setId($userId);
         }
 
@@ -42,7 +42,7 @@ class UserRepository
     public function find(int $id): ?User
     {
         $sql = "SELECT * FROM users WHERE id = :id";
-        $stmt = $this->connexion->prepare($sql);
+        $stmt = $this->connection->prepare($sql);
         $stmt->execute(['id' => $id]);
 
         $data = $stmt->fetch();
@@ -53,7 +53,7 @@ class UserRepository
     public function findByEmail(string $email): ?User
     {
         $sql = "SELECT * FROM users WHERE email = :email";
-        $stmt = $this->connexion->prepare($sql);
+        $stmt = $this->connection->prepare($sql);
         $stmt->execute(['email' => $email]);
 
         $data = $stmt->fetch();
@@ -64,7 +64,7 @@ class UserRepository
     public function findByUsername(string $username): ?User
     {
         $sql = "SELECT * FROM users WHERE username = :username";
-        $stmt = $this->connexion->prepare($sql);
+        $stmt = $this->connection->prepare($sql);
         $stmt->execute(['username' => $username]);
 
         $data = $stmt->fetch();
