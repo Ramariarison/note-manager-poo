@@ -113,4 +113,26 @@ class AuthController
         $this->session->flash('old', $data);
         $this->redirect('/showRegister');
     }
+
+    // Déconnexion
+    public function logout()
+    {
+        $this->autService->logout();
+        $this->redirectWithMessage('/showLogin', 'success', 'Déconnexion réussie');
+    }
+
+    // Méthodes utilitaires pour les redirections
+    public function redirect(string $path)
+    {
+        // Ajout du chemin de base si nécessaire
+        $fullpath = '/crashProject/public/' . $path;
+        header('Location: ' . $fullpath);
+        exit;
+    }
+
+    public function redirectWithMessage(string $path, string $type, string $message)
+    {
+        $this->session->flash($type, $message);
+        $this->redirect($path);
+    }
 }
