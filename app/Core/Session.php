@@ -15,7 +15,7 @@ class Session {
         $_SESSION[$key] = $value;
     }
 
-    public function get(string $key): mixed
+    public function get(string $key)
     {
         return $_SESSION[$key] ?? null;
     }
