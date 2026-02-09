@@ -8,8 +8,14 @@ use App\Core\Session;
 
 class AuthService
 {
-    private UserRepository $userRepository;
-    private Session $session;
+    private $userRepository;
+    private $session;
+
+    public function __construct(UserRepository $userRepository, Session $session)
+    {
+        $this->userRepository = $userRepository;
+        $this->session = $session;
+    }
 
     public function register(array $data): array
     {
