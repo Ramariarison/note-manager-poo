@@ -82,4 +82,35 @@ class AuthController
 
         require __DIR__ . '/../../views/auth/register.php';
     }
+
+    // Traitement de l'inscription d'un utilisateur
+    public function register()
+    {
+        // Vérifier que c'est bien une requete POST
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $this->redirect('/showRegister');
+        }
+
+        // Préparer les données
+        $data = [
+            'username' => $_POST['username'] ?? '',
+            'email' => $_POST['email'] ?? '',
+            'password' => $_POST['password'] ?? '',
+            'password_confirm' => $_POST['password_confirm'] ?? ''
+        ];
+
+        // Appel du service d'inscription
+        $result = $this->authService->register($data);
+
+        if ($result['success']) {
+            // Redirection vers la page de notes
+            $this->session->flash('success', $result['message']);
+            $this->redirect('/notes');
+        }
+
+        // Échec, sauvegarder les erreurs et données pour réafficher
+        $this->session->flash('errors', $result['errors']);
+        $this->session->flash('old', $data);
+        $this->redirect('/showRegister');
+    }
 }
