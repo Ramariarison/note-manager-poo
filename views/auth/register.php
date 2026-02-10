@@ -19,13 +19,13 @@
             </div>
 
             <!-- Messages d'erreur/succés -->
-            <?php if (isset($success)) : ?>
+            <?php if (!empty($success) && is_string($success)) : ?>
                 <div class="alert alert-success">
                     <?= htmlspecialchars($success) ?>
                 </div>
             <?php endif; ?>
 
-            <?php if (isset($error)) : ?>
+            <?php if (!empty($error) && is_string($error)) : ?>
                 <div class="alert alert-error">
                     <?= htmlspecialchars($error) ?>
                 </div>
