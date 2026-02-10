@@ -1,6 +1,12 @@
 RewriteEngine On
+RewriteBase /crashProject/public/
 
+# Pour empêcher l'accès aux fichiers sensibles
+<FilesMatch "\.(env|htaccess|sql)$">
+    Deny from all
+</FilesMatch>
+
+# Front controller pattern
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
 RewriteRule ^ index.php [QSA,L]
