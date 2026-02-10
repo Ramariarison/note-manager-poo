@@ -4,18 +4,14 @@ namespace App\Models;
 
 class User
 {
-    private ?int $id = null;
-    private string $username;
-    private string $email;
-    private string $password;
-    private string $createdAt;
-    private string $updatedAt;
+    private $id = null;
+    private $username;
+    private $email;
+    private $password;
+    private $createdAt;
+    private $updatedAt;
     
-    public function __construct(
-        string $username,
-        string $email,
-        string $plainPassword
-    ) {
+    public function __construct($username, $email, $plainPassword) {
         $this->username = $username;
         $this->email = $email;
         $this->setPassword($plainPassword);
@@ -24,7 +20,7 @@ class User
     }
     
     // Getters
-    public function getId(): ?int { return $this->id; }
+    public function getId() { return $this->id; }
     public function getUsername(): string { return $this->username; }
     public function getEmail(): string { return $this->email; }
     public function getPassword(): string { return $this->password; }
@@ -32,7 +28,7 @@ class User
     public function getUpdatedAt(): string { return $this->updatedAt; }
     
     // Setters
-    public function setId(?int $id): void { $this->id = $id; }
+    public function setId(int $id): void { $this->id = $id; }
     public function setUsername(string $username): void { 
         $this->username = $username; 
         $this->updatedAt = date('Y-m-d H:i:s');
@@ -54,13 +50,13 @@ class User
     }
     
     // Vérification de mot de passe
-    public function verifyPassword(string $plainPassword): bool
+    public function verifyPassword(string $plainPassword)
     {
         return password_verify($plainPassword, $this->password);
     }
     
     // Convertir en tableau (pour JSON ou sessions)
-    public function toArray(): array
+    public function toArray()
     {
         return [
             'id' => $this->id,

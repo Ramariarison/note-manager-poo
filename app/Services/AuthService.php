@@ -17,7 +17,7 @@ class AuthService
         $this->session = $session;
     }
 
-    public function register(array $data): array
+    public function register($data)
     {
         // Validation
         $errors = $this->validateRegistration($data);
@@ -67,7 +67,7 @@ class AuthService
     public function login(string $email, string $password)
     {
         // Validation basique
-        if (empty($username) || empty($password)) {
+        if (empty($email) || empty($password)) {
             return ['success' => false, 'errors' => ['general' => 'Email et mot de passe requis']];
         }
 
@@ -107,7 +107,7 @@ class AuthService
     }
 
     // Méthode pour récupérer les données de l'utilisateur courant
-    public function getCurrentUser(): ?array
+    public function getCurrentUser()
     {
         if (!$this->isLoggedIn()) {
             return null;
@@ -117,14 +117,14 @@ class AuthService
     }
 
     // Méthode pour récupérer l'id de l'utilisateur courant
-    public function getCurrentUserId(): ?int
+    public function getCurrentUserId()
     {
         $user = $this->getCurrentUser();
         return $user['id'] ?? null;
     }
 
     // Validation des données venant du controller qui n'est pas encore créé pour le moment
-    private function validateRegistration(array $data): array
+    private function validateRegistration(array $data)
     {
         $errors = [];
 

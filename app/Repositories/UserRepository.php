@@ -16,7 +16,7 @@ class UserRepository
     }
 
     // Créer un utilisateur
-    public function create(User $user): bool
+    public function create($user)
     {
         $sql = "INSERT INTO users (username, email, password) VALUES 
         (:username, :email, :password)";
@@ -39,7 +39,7 @@ class UserRepository
     }
 
     // Trouver un utilisateur par id
-    public function find(int $id): ?User
+    public function find($id)
     {
         $sql = "SELECT * FROM users WHERE id = :id";
         $stmt = $this->connection->prepare($sql);
@@ -50,7 +50,7 @@ class UserRepository
     }
 
     // Trouver un utilisateur par email ( utile pour le login )
-    public function findByEmail(string $email): ?User
+    public function findByEmail($email)
     {
         $sql = "SELECT * FROM users WHERE email = :email";
         $stmt = $this->connection->prepare($sql);
@@ -61,7 +61,7 @@ class UserRepository
     }
 
     // Trouver un utilisateur par username ( pour vérifier l'unicité )
-    public function findByUsername(string $username): ?User
+    public function findByUsername($username)
     {
         $sql = "SELECT * FROM users WHERE username = :username";
         $stmt = $this->connection->prepare($sql);
@@ -72,7 +72,7 @@ class UserRepository
     }
 
     // Méthode privée pour convertir un tableau BD en Objet User
-    private function hydrate(array $data): User
+    private function hydrate($data)
     {
         $user = new User(
             $data['username'],
