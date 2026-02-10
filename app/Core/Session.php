@@ -10,7 +10,7 @@ class Session {
         }
     }
 
-    public function set(string $key, mixed $value): void 
+    public function set(string $key, $value): void 
     {
         $_SESSION[$key] = $value;
     }
@@ -29,12 +29,12 @@ class Session {
     {
         // si on donne une valeur, on stocke
         if ($value !== null) {
-            $_SESSION['key'] = $value;
+            $_SESSION[$key] = $value;
             return;
         }
 
         // sinon on lit et on supprime
-        $value = $_SESSION['key'] ?? null;
+        $value = $_SESSION[$key] ?? null;
         unset($_SESSION[$key]);
 
         return $value;
