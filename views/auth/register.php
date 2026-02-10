@@ -39,27 +39,46 @@
 
             <div class="box">
                 <div class="second-form">
-                    <form action="controllers/authentication.php" method="post">
+                    <form action="/crashProject/public/register" method="post">
                         <div class="first-label">
                             <label for="username">Username</label>
                             <br>
-                                <input name="username" type="text" placeholder="Vintsy" required>
+                                <input name="username" type="text" 
+                                    placeholder="Vintsy"
+                                    value="<?= htmlspecialchars($old['username'] ?? '') ?>"
+                                    class="<?= isset($errors['username']) ? 'form-input error' : '' ?>"
+                                    required>
                             <br>
+                            <?php if (isset($errors['username'])) : ?>
+                                <div class="error-message"><?= htmlspecialchars($errors['username']) ?></div>
+                            <?php endif; ?>
                         </div>
                         <div class="label">
                             <label for="email">Email address</label>
                             <br>
-                                <input name="email" type="email" placeholder="email@address.com" required>
+                                <input name="email" type="email" 
+                                    placeholder="email@address.com" 
+                                    value="<?= htmlspecialchars($old['email'] ?? '') ?>"
+                                    class="<?= isset($errors['email']) ? 'form-input error' : '' ?>"
+                                    required>
                             <br>
+                            <?php if(isset($errors['email'])) : ?>
+                                <div class="error-message"><?= htmlspecialchars($errors['email']) ?></div>
+                            <?php endif; ?>
                         </div>
                         <div class="label">
                             <label for="password">Password</label>
                             <div class="password-container">
-                                <input name="password" id="password" type="password" required>
+                                <input name="password" id="password" type="password"
+                                    class="<?= isset($errors['password']) ? 'form-input error' : '' ?>"
+                                    required>
                                 <div class="toggle" data-target="password">
                                     <i class="fa fa-eye"></i>
                                 </div>
                             </div>
+                            <?php if(isset($errors['password'])) : ?>
+                                <div class="error-message"><?= htmlspecialchars($errors['password']) ?></div>
+                            <?php endif; ?>
                         </div>
                         <div class="label">
                             <label for="password-confirmation">Password confirmation</label>
@@ -72,7 +91,7 @@
                         </div>
                         <div class="btn">
                             <button type="submit">Register</button>
-                            <div><a href="login.php">Want to login ?</a></div>
+                            <div><a href="/crashProject/public/loginPage">Want to login ?</a></div>
                         </div>
                     </form>
                 </div>
@@ -101,6 +120,19 @@
                     toggleIcon.classList.add('fa-eye');
                 }
             });
+        });
+
+        // Validation correspondance des mots de passe
+        const form = document.querySelector('form');
+        const password = document.getElementById('password');
+        const passwordConfirm = document.getElementById('password-confirmation');
+        
+        form.addEventListener('submit', function(e) {
+            if (password.value !== passwordConfirm.value) {
+                e.preventDefault();
+                alert('Passwords do not match!');
+                password.focus();
+            }
         });
     });
 </script>
