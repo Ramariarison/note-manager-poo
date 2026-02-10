@@ -17,6 +17,26 @@
                 <h1><span>Register</span> Page</h1>
                 <h4>Please enter your details.</h4>
             </div>
+
+            <!-- Messages d'erreur/succés -->
+            <?php if (isset($success)) : ?>
+                <div class="alert alert-success">
+                    <?= htmlspecialchars($success) ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (isset($error)) : ?>
+                <div class="alert alert-error">
+                    <?= htmlspecialchars($error) ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (isset($errors['general'])) : ?>
+                <div class="alert alert-error">
+                    <?= htmlspecialchars($errors['general']) ?>
+                </div>
+            <?php endif; ?>
+
             <div class="box">
                 <div class="second-form">
                     <form action="controllers/authentication.php" method="post">
