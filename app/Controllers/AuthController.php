@@ -33,6 +33,7 @@ class AuthController
             'error' => $this->session->flash('error')
         ];
 
+        extract($data);
         require __DIR__ . '/../../views/auth/login.php';
     }
 
@@ -80,6 +81,7 @@ class AuthController
             'error' => $this->session->flash('error')
         ];
 
+        extract($data);
         require __DIR__ . '/../../views/auth/register.php';
     }
 
@@ -88,14 +90,15 @@ class AuthController
     {
         // Vérifier que c'est bien une requete POST
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            $this->redirect('/showRegister');
+            $this->redirect('/registerPage');
         }
 
         // Préparer les données
         $data = [
             'username' => $_POST['username'] ?? '',
             'email' => $_POST['email'] ?? '',
-            'password' => $_POST['password'] ?? ''
+            'password' => $_POST['password'] ?? '',
+            'password_confirm' => $_POST['password_confirm'] ?? ''
         ];
 
         // Appel du service d'inscription
@@ -110,21 +113,21 @@ class AuthController
         // Échec, sauvegarder les erreurs et données pour réafficher
         $this->session->flash('errors', $result['errors']);
         $this->session->flash('old', $data);
-        $this->redirect('/showRegister');
+        $this->redirect('/registerPage');
     }
 
     // Déconnexion
     public function logout()
     {
         $this->authService->logout();
-        $this->redirectWithMessage('/showLogin', 'success', 'Déconnexion réussie');
+        $this->redirectWithMessage('/loginPage', 'success', 'Déconnexion réussie');
     }
 
     // Méthodes utilitaires pour les redirections
     public function redirect(string $path)
     {
         // Ajout du chemin de base si nécessaire
-        $fullpath = '/crashProject/public/' . $path;
+        $fullpath = '/crashProject/public' . $path;
         header('Location: ' . $fullpath);
         exit;
     }
