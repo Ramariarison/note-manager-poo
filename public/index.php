@@ -8,6 +8,7 @@ use App\Services\AuthService;
 use App\Repositories\UserRepository;
 use App\Controllers\AuthController;
 use App\Controllers\HomeController;
+use App\Controllers\NoteController;
 
 // Création des objets nécessaires
 $session = new Session();
@@ -17,6 +18,7 @@ $authService = new AuthService($userRepository, $session);
 // Créer le contrôleur avec injection de dépendances si nécessaire
 $homeController = new HomeController();
 $authController = new AuthController($authService, $session);
+$noteController = new NoteController();
 
 // Initialiser le routeur
 $router = new Router();
@@ -27,5 +29,7 @@ $router->get('/loginPage', [$authController, 'showLogin']);
 $router->get('/registerPage', [$authController, 'showRegister']);
 $router->post('/register', [$authController, 'register']);
 $router->post('/login', [$authController, 'login']);
+
+$router->get('/notes', [$noteController, 'index']);
 
 $router->dispatch();
