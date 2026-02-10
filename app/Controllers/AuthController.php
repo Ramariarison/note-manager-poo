@@ -95,8 +95,7 @@ class AuthController
         $data = [
             'username' => $_POST['username'] ?? '',
             'email' => $_POST['email'] ?? '',
-            'password' => $_POST['password'] ?? '',
-            'password_confirm' => $_POST['password_confirm'] ?? ''
+            'password' => $_POST['password'] ?? ''
         ];
 
         // Appel du service d'inscription
@@ -117,7 +116,7 @@ class AuthController
     // Déconnexion
     public function logout()
     {
-        $this->autService->logout();
+        $this->authService->logout();
         $this->redirectWithMessage('/showLogin', 'success', 'Déconnexion réussie');
     }
 
