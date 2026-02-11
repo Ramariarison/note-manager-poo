@@ -15,7 +15,7 @@
         <aside class="sidebar">
             <div class="hero-sidebar">
                 <div class="image-section">
-                    <img src="../assets/images/default_profil.png" alt="Profile" class="profil-icon">
+                    <img src="../assets/images/a.jpg" alt="Profile" class="profil-icon">
                 </div>
                 <div class="nom-utilisateur">
                     <p>Vintsy093@gmail.com</p>
