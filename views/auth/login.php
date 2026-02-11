@@ -17,28 +17,66 @@
                 <h1><span>Welcome</span> Back</h1>
                 <h4>Please enter your details.</h4>
             </div>
+
+            <!-- Messages d'erreur/succés -->
+            <?php if (!empty($success) && is_string($success)) : ?>
+                <div class="alert alert-success">
+                    <?= htmlspecialchars($success) ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($error) && is_string($error)) : ?>
+                <div class="alert alert-error">
+                    <?= htmlspecialchars($error) ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (isset($errors['general'])) : ?>
+                <div class="alert alert-error">
+                    <?= htmlspecialchars($errors['general']) ?>
+                </div>
+            <?php endif; ?>
+
             <div class="box">
                 <div class="first-form">
-                    <form action="controllers/authentication.php" method="post">
+                    <form action="crashProject/public/login" method="post">
                         <div class="first-label">
                             <label for="username">Email address</label>
                             <br>
-                                <input type="text" placeholder="email@address.com" required>
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email"
+                                    placeholder="email@address.com" 
+                                    value="<?= htmlspecialchars($old['email'] ?? '') ?>"
+                                    class="<?= isset($errors['email']) ? 'form-input error' : '' ?>"
+                                    required>
                             <br>
+                            <?php if (isset($errors['email'])) : ?>
+                                <div class="error-message"><?= htmlspecialchars($errors['email']) ?></div>
+                            <?php endif; ?>
                         </div>
                         <div class="label">
                             <label for="password">Password</label>
                             <br>
                             <div class="password-container">
-                                <input id="password" type="password" required>
+                                <input 
+                                    name="password" 
+                                    id="password" 
+                                    type="password"
+                                    class="<?= isset($errors['password']) ? 'form-input error' : '' ?>"
+                                    required>
                                 <div id="toggle">
                                     <i class="fa fa-eye"></i>
                                 </div>
                             </div>
+                            <?php if (isset($errors['password'])) : ?>
+                                <div class="error-message"><?= htmlspecialchars($errors['password']) ?></div>
+                            <?php endif; ?>
                         </div>
                         <div class="btn">
                             <button type="submit">Login</button>
-                            <div><a href="register.php">Want to register ?</a></div>
+                            <div><a href="crashProject/public/registerPage">Want to register ?</a></div>
                         </div>
                     </form>
                 </div>
