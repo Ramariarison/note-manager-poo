@@ -16,7 +16,7 @@ $userRepository = new UserRepository();
 $authService = new AuthService($userRepository, $session); 
 
 // Créer le contrôleur avec injection de dépendances si nécessaire
-$homeController = new HomeController();
+$homeController = new HomeController($authService, $session);
 $authController = new AuthController($authService, $session);
 $noteController = new NoteController();
 
