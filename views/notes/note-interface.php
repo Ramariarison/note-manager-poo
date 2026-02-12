@@ -18,7 +18,7 @@
                     <img src="../assets/images/a.jpg" alt="Profile" class="profil-icon">
                 </div>
                 <div class="nom-utilisateur">
-                    <p>Vintsy093@gmail.com</p>
+                    <p><?= htmlspecialchars($user['email']) ?></p>
                 </div>
             </div>
             <div class="main">
