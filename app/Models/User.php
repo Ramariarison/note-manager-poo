@@ -12,8 +12,8 @@ class User
     private $updatedAt;
     
     public function __construct($username, $email, $plainPassword) {
-        $this->username = $username;
-        $this->email = $email;
+        $this->setUsername($username);
+        $this->setEmail($email);
         $this->setPassword($plainPassword);
         $this->createdAt = date('Y-m-d H:i:s');
         $this->updatedAt = date('Y-m-d H:i:s');
