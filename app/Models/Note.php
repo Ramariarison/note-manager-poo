@@ -4,20 +4,20 @@ namespace App\Models;
 
 class Note
 {
-    private ?int $id = null;
-    private int $userId;
-    private string $title;
-    private string $content;
-    private string $importanceLevel;
-    private bool $isImportant = false;
-    private string $createdAt;
-    private string $updatedAt;
+    private $id;
+    private $userId;
+    private $title;
+    private $content;
+    private $importanceLevel;
+    private $isImportant = false;
+    private $createdAt;
+    private $updatedAt;
     
     public function __construct(
         int $userId,
         string $title,
         string $content,
-        string $importanceLevel = 'normal',
+        string $importanceLevel,
         bool $isImportant = false
     ) {
         $this->userId = $userId;
@@ -30,48 +30,48 @@ class Note
     }
     
     // GETTERS
-    public function getId(): ?int 
+    public function getId()
     { 
         return $this->id; 
     }
     
-    public function getUserId(): int 
+    public function getUserId()
     { 
         return $this->userId; 
     }
     
-    public function getTitle(): string 
+    public function getTitle()
     { 
         return $this->title; 
     }
     
-    public function getContent(): string 
+    public function getContent()
     { 
         return $this->content; 
     }
     
-    public function getImportanceLevel(): string 
+    public function getImportanceLevel()
     { 
         return $this->importanceLevel; 
     }
     
-    public function getIsImportant(): bool 
+    public function getIsImportant()
     { 
         return $this->isImportant; 
     }
     
-    public function getCreatedAt(): string 
+    public function getCreatedAt()
     { 
         return $this->createdAt; 
     }
     
-    public function getUpdatedAt(): string 
+    public function getUpdatedAt()
     { 
         return $this->updatedAt; 
     }
     
     // SETTERS
-    public function setId(?int $id): void 
+    public function setId(int $id): void 
     { 
         $this->id = $id; 
     }
