@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Core\Session;
 use App\Models\Note;
-use App\Repository\NoteRepository;
+use App\Repositories\NoteRepository;
 
 class NoteService
 {

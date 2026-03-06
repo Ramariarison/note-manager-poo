@@ -5,6 +5,7 @@ require __DIR__ . '/../vendor/autoload.php';
 use App\Core\Session;
 use App\Core\Router;
 use App\Services\AuthService;
+use App\Services\NoteService;
 use App\Repositories\UserRepository;
 use App\Repositories\NoteRepository;
 use App\Controllers\AuthController;
@@ -21,7 +22,7 @@ $noteService = new NoteService($noteRepository, $session);
 // Créer le contrôleur avec injection de dépendances si nécessaire
 $homeController = new HomeController($authService, $session);
 $authController = new AuthController($authService, $session);
-$noteController = new NoteController($session, $authService, $noteRepository);
+$noteController = new NoteController($session, $authService, $noteService);
 
 // Initialiser le routeur
 $router = new Router();

@@ -12,7 +12,7 @@ class NoteController
     private $noteService;
     private $session;
 
-    public function __construct(Session $session, AuthService $authService, NoteService $noteService, )
+    public function __construct(Session $session, AuthService $authService, NoteService $noteService)
     {
         $this->session = $session;
         $this->authService = $authService;
