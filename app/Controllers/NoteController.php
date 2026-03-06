@@ -42,7 +42,7 @@ class NoteController
         $data = [
             'title' => $_POST['title'] ?? '',
             'content' => $_POST['content'] ?? '',
-            'importance_level' => $_POST['priority']
+            'importance_level' => $_POST['importance_level']
         ];
 
         $result = $this->noteService->addNote($data);
@@ -50,6 +50,8 @@ class NoteController
         if ($result['success']) {
             $this->session->flash('success', $result['message']);
             $this->redirect('/notes');
+        } else {
+            var_dump($result);
         }
     }
 

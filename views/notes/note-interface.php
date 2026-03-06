@@ -148,7 +148,7 @@
                 <span class="close-btn" id="closeModal">&times;</span>
             </div>
 
-            <form action="/notes/store" method="POST">
+            <form action="/crashProject/public/notes/store" method="post">
                 <div class="form-group">
                     <label>Note title</label>
                     <input type="text" name="title" placeholder="Title" required>
@@ -161,7 +161,7 @@
 
                 <div class="form-group">
                     <label>Priority</label>
-                    <select name="priority">
+                    <select name="importance_level">
                         <option value="Critical">Critical</option>
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>

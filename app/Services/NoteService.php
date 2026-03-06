@@ -26,15 +26,21 @@ class NoteService
         }
 
         try {
-            $note = new Note([
+            $note = new Note(
                 $this->getCurrentUserId(),
                 trim($data['title']),
                 trim($data['content']),
                 $data['importance_level']
-            ]);
+            );
 
             $this->noteRepository->createNote($note);
-        } catch (\throwable $th) {
+
+            return [
+                'success' => true,
+                'message' => 'Note ajoutée avec succés'
+            ];
+
+        } catch (\Throwable $th) {
             return ['success' => false, 'errors' => ['general' => 'erreur technique: ' . $th->getMessage()]];
         }
 
