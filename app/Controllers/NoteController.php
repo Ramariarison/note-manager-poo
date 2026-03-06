@@ -2,15 +2,21 @@
 
 namespace App\Controllers;
 
+use App\Core\Session;
 use App\Services\AuthService;
+use App\Services\NoteService;
 
 class NoteController
 {
     private $authService;
+    private $noteService;
+    private $session;
 
-    public function __construct($authService)
+    public function __construct(Session $session, AuthService $authService, NoteService $noteService, )
     {
+        $this->session = $session;
         $this->authService = $authService;
+        $this->noteService = $noteService;
     }
 
     public function index()
@@ -28,6 +34,23 @@ class NoteController
         ]);
 
         require __DIR__ . '/../../views/notes/note-interface.php';
+    }
+
+    public function addNote()
+    {
+        // Préparation des données
+        $data = [
+            'title' => $_POST['title'] ?? '',
+            'content' => $_POST['content'] ?? '',
+            'importance_level' => $_POST['priority']
+        ];
+
+        $result = $this->noteService->addNote($data);
+        
+        if ($result['success']) {
+            $this->session->flash('success', $result['message']);
+            $this->redirect('/notes');
+        }
     }
 
     public function redirect($path)
