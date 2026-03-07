@@ -28,9 +28,13 @@ class NoteController
         // Récuperer l'utilisateur connecté
         $user = $this->authService->getCurrentUser();
 
+        // Récuperer les notes
+        $notes = $this->noteService->getUserNotes();
+
         // Passer l'utilisateur à la vue
         extract([
-            'user' => $user
+            'user' => $user,
+            'notes' => $notes,
         ]);
 
         require __DIR__ . '/../../views/notes/note-interface.php';

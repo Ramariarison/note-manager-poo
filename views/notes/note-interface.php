@@ -87,11 +87,14 @@
             </div>
             <!-- Liste de notes -->
             <div class="notes-grid">
+
+                <?php foreach ($notes as $note): ?>
+
                 <!-- Card -->
                 <div class="note-card">
                     <div class="card-header">
                         <div class="note-priority">
-                            <span class="priority-level">C</span>
+                            <span class="priority-level"><?= htmlspecialchars(substr($note['importance_level'],0,1)) ?></span>
                         </div>
                         <div class="btn-to-pin-note">
                             <button class="pin-note">pin note</button>
@@ -100,20 +103,20 @@
                     <div class="card-body">
                         <div class="note-date-and-hour">
                             <div class="note-date">
-                                <span class="date">23-11-2020</span>
+                                <span class="date"><?= htmlspecialchars($note['created_at']) ?></span>
                             </div>
+                            <!--
                             <div class="note-hour">
                                 <span class="hour">15h:30min</span>
                             </div>
+                            -->
                         </div>
                         <div class="note-title">
-                            <span>Amazon</span>
+                            <span><?= htmlspecialchars($note['title']) ?></span>
                         </div>
                         <div class="note-content">
                             <span class="content">
-                                L'amour est un sentiment profond d'affection et d'attachement, 
-                                unissant deux personnes par un désir de proximité physique, 
-                                intellectuelle ou émotionnelle.
+                                <?= htmlspecialchars($note['content']) ?>
                             </span>
                         </div>
                     </div>
@@ -135,6 +138,9 @@
                         </div>
                     </div>
                 </div>
+
+                <?php endforeach; ?>
+
             </div>
         </div>
     </div>
