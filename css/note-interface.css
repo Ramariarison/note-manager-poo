@@ -247,6 +247,9 @@ html, body {
     display: flex;
     flex-direction: column;
 
+    /* Hauteur fixe */
+    height: 300px;
+
     gap: 18px; /* + respirant */
 
     /* Problème d'alignement à droite résolu */
@@ -315,6 +318,10 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 10px; /* avant: 5px → trop serré */
+
+    /* ?? */
+    flex: 1; 
+    overflow: hidden;
 }
 
 .note-date-and-hour {
@@ -358,13 +365,15 @@ html, body {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* FOOTER */
 
 .card-footer {
-    margin-top: 16px;
+    margin-top: auto;
     padding-top: 16px;
 
     border-top: 1px solid #e5e7eb; /* séparation douce */

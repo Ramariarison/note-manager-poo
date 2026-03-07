@@ -17,6 +17,13 @@ class NoteService
         $this->session = $session;
     }
 
+    public function getUserNotes()
+    {
+        $userId = $this->getCurrentUserId();
+
+        return $this->noteRepository->getNotesByUserId($userId);
+    }
+
     public function addNote($data)
     {
         $errors = $this->validateNote($data);
