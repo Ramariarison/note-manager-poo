@@ -75,6 +75,11 @@ class NoteService
         return $user['id'] ?? null;
     }
 
+    public function deleteNote($id)
+    {
+        return $this->noteRepository->deleteNoteById($id);
+    }
+
     public function validateNote(array $data)
     {
         $errors = [];

@@ -76,4 +76,15 @@ class NoteRepository
 
         return $stmt->execute($params);
     }
+
+    public function deleteNoteById($id)
+    {
+        $sql = "DELETE FROM notes WHERE id = :id";
+
+        $stmt = $this->connection->prepare($sql);
+
+         return $stmt->execute([
+            'id' => $id
+        ]);
+    }
 }
