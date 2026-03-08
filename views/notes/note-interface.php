@@ -81,6 +81,13 @@
                 </div>
             <?php endif; ?>
 
+            <?php if(!empty($successDelete)) : ?>
+                <div class="toast-success" id="toastSuccess">
+                    <i class="fa fa-check-circle"></i>
+                    <span><?= htmlspecialchars($successDelete) ?></span>
+                </div>
+            <?php endif; ?>
+
             <div class="page-header">
                 <h2 class="page-title">My notes</h2>
                 <div class="header-actions">
@@ -160,9 +167,14 @@
                                     <span>edit</span>
                                 </button>
                             </div>
-                            <div class="delete-icon">
-                                <i class="fa fa-trash"></i>
-                            </div>
+
+                            <form action="/crashProject/public/notes/delete" method="POST" class="delete-form">
+                                <input type="hidden" name="id" value="<?= $note['id'] ?>">
+                                <button class="delete-icon">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -325,6 +337,22 @@
                 nothing.classList.add("nothing-hide");
             },3000);
         }
+
+        // Message de confirmation avant que la note soit supprimée
+
+        document.querySelectorAll(".delete-form").forEach(form => {
+
+            form.addEventListener("submit", function(e) {
+
+                const confirmDelete = confirm("Voulez vous vraiment supprimer ce note ?");
+
+                if (!confirmDelete) {
+                    e.preventDefault();
+                }
+
+            });
+
+        });
         
     </script>
 

@@ -35,6 +35,7 @@ $router->post('/register', [$authController, 'register']);
 $router->post('/login', [$authController, 'login']);
 $router->post('/notes/store', [$noteController, 'addNote']);
 $router->post('/notes/update', [$noteController, 'editNote']);
+$router->post('/notes/delete', [$noteController, 'delete']);
 
 $router->get('/notes', [$noteController, 'index']);
 

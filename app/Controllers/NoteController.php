@@ -39,6 +39,8 @@ class NoteController
 
         $error = $this->session->flash('errorupdate');
 
+        $successDelete = $this->session->flash('successDelete');
+
         $old = $this->session->flash('old');
 
         // Passer l'utilisateur à la vue
@@ -48,6 +50,7 @@ class NoteController
             'successLogin' => $successLogin,
             'successAdd' => $successAdd,
             'successUpdate' => $success,
+            'successDelete' => $successDelete,
             'errorUpdate' => $error,
             'old' => $old
         ]);
@@ -111,6 +114,25 @@ class NoteController
         }
 
         $this->redirect('/notes');
+    }
+
+    public function delete()
+    {
+        $id = $_POST['id'] ?? '';
+
+        if (!$id) {
+            $this->session->flash('errorDelete', 'Note pas trouvée !');
+            header('Location: /crashProject/public/notes');
+            exit;
+        }
+
+        $this->noteService->deleteNote($id);
+
+        $this->session->flash('successDelete', 'Note supprimée avec succés !');
+
+        header('Location: /crashProject/public/notes');
+
+        exit;
     }
 
     public function redirect($path)
