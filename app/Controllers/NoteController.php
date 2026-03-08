@@ -31,6 +31,10 @@ class NoteController
         // Récuperer les notes et les messages
         $notes = $this->noteService->getUserNotes();
 
+        $successLogin = $this->session->flash('successLogin');
+
+        $successAdd = $this->session->flash('success');
+
         $success = $this->session->flash('successupdate');
 
         $error = $this->session->flash('errorupdate');
@@ -41,8 +45,10 @@ class NoteController
         extract([
             'user' => $user,
             'notes' => $notes,
-            'successupdate' => $success,
-            'errorupdate' => $error,
+            'successLogin' => $successLogin,
+            'successAdd' => $successAdd,
+            'successUpdate' => $success,
+            'errorUpdate' => $error,
             'old' => $old
         ]);
 
@@ -98,7 +104,7 @@ class NoteController
 
         } else {
 
-            $this->session->flash('errorupdate', 'Aucun changement détecté');
+            $this->session->flash('errorupdate', 'Aucun changement détecté !');
 
             $this->session->flash('old', $data);
 

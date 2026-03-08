@@ -60,10 +60,24 @@
         </aside>
         <div class="page-content">
 
-            <?php if(!empty($successupdate)) : ?>
+            <?php if(!empty($successLogin)) : ?>
                 <div class="toast-success" id="toastSuccess">
                     <i class="fa fa-check-circle"></i>
-                    <span><?= htmlspecialchars($success) ?></span>
+                    <span><?= htmlspecialchars($successLogin) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if(!empty($successAdd)) : ?>
+                <div class="toast-success" id="toastSuccess">
+                    <i class="fa fa-check-circle"></i>
+                    <span><?= htmlspecialchars($successAdd) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if(!empty($successUpdate)) : ?>
+                <div class="toast-success" id="toastSuccess">
+                    <i class="fa fa-check-circle"></i>
+                    <span><?= htmlspecialchars($successUpdate) ?></span>
                 </div>
             <?php endif; ?>
 
@@ -203,9 +217,9 @@
                 <span class="close-btn" id="closeEditModal">&times;</span>
             </div>
 
-            <?php if(!empty($errorupdate)) : ?>
+            <?php if(!empty($errorUpdate)) : ?>
                 <div class="alert-error" id="errorUpdate">
-                    <?= htmlspecialchars($error) ?>
+                    <?= htmlspecialchars($errorUpdate) ?>
                 </div>
 
                 <script>

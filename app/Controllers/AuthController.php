@@ -54,7 +54,7 @@ class AuthController
 
         if ($result['success']) {
             // Succés alors on redirige l'utilisateur vers la page de notes
-            $this->session->flash('success', $result['message']);
+            $this->session->flash('successLogin', $result['message']);
             $this->redirect('/notes');
         }
 
