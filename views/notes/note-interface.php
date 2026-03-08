@@ -59,6 +59,14 @@
             </div>
         </aside>
         <div class="page-content">
+
+            <?php if(!empty($successupdate)) : ?>
+                <div class="alert-success">
+                    <i class="fa fa-check-circle"></i>
+                    <span><?= htmlspecialchars($success) ?></span>
+                </div>
+            <?php endif; ?>
+
             <div class="page-header">
                 <h2 class="page-title">My notes</h2>
                 <div class="header-actions">
@@ -127,7 +135,13 @@
                                     <i class="fa fa-eye"></i>
                                     <span>view</span>
                                 </button>
-                                <button class="edit">
+                                <button 
+                                    class="edit"
+                                    data-id="<?= $note['id'] ?>"
+                                    data-title="<?= htmlspecialchars($note['title']) ?>"
+                                    data-content="<?= htmlspecialchars($note['content']) ?>" 
+                                    data-priority="<?= $note['importance_level'] ?>"  
+                                >
                                     <i class="fa fa-pencil"></i>
                                     <span>edit</span>
                                 </button>
@@ -180,6 +194,61 @@
         </div>
     </div>
 
+    <!-- Modal for the note editing -->
+
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><span class="add-note">Edit</span> Note</h3>
+                <span class="close-btn" id="closeEditModal">&times;</span>
+            </div>
+
+            <?php if(!empty($errorupdate)) : ?>
+                <div class="alert-error">
+                    <?= htmlspecialchars($error) ?>
+                </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const editModal = document.getElementById("editModal");
+                        editModal.style.display = "block";
+                    });
+                </script>
+
+            <?php endif; ?>
+
+            <form action="/crashProject/public/notes/update" method="post">
+
+                <?php $old = $old ?? []; ?>
+
+                <input type="hidden" name="id" value="<?= htmlspecialchars($old['id'] ?? '') ?>"  id="editNoteId">
+
+                <div class="form-group">
+                    <label>Note title</label>
+                    <input type="text" name="title" value="<?= htmlspecialchars($old['title'] ?? '') ?>" id="editTitle" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea name="content" id="editContent" rows="4"><?= htmlspecialchars($old['content'] ?? '') ?></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Priority</label>
+                    <select name="importance_level" id="editPriority">
+                        <option value="Critical" <?= ($old['importance_level'] ?? '') === 'Critical' ? 'selected' : '' ?>>Critical</option>
+                        <option value="High" <?= ($old['importance_level'] ?? '') === 'High' ? 'selected' : '' ?>>High</option>
+                        <option value="Medium" <?= ($old['importance_level'] ?? '') === 'Medium' ? 'selected' : '' ?>>Medium</option>
+                        <option value="Low" <?= ($old['importance_level'] ?? '') === 'Low' ? 'selected' : '' ?>>Low</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Update Note</button>
+
+            </form>
+        </div>
+    </div>
+
     <script>
         const modal = document.getElementById("noteModal");
         const openBtn = document.getElementById("openModal");
@@ -198,6 +267,28 @@
                 modal.style.display = "none";
             }
         }
+
+        const editModal = document.getElementById("editModal");
+        const closeEditModal = document.getElementById("closeEditModal");
+
+        document.querySelectorAll(".edit").forEach(button => {
+
+            button.addEventListener("click", function(){
+
+                document.getElementById("editNoteId").value = this.dataset.id;
+                document.getElementById("editTitle").value = this.dataset.title;
+                document.getElementById("editContent").value = this.dataset.content;
+                document.getElementById("editPriority").value = this.dataset.priority;
+
+                editModal.style.display = "block";
+            });
+
+        });
+
+        closeEditModal.onclick = function(){
+            editModal.style.display = "none";
+        }
+        
     </script>
 
 </body>

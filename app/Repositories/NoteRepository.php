@@ -43,4 +43,37 @@ class NoteRepository
 
         return $success;
     }
+
+    public function findNoteById($id)
+    {
+        $sql = "SELECT * FROM notes WHERE id = :id";
+
+        $stmt = $this->connection->prepare($sql);
+
+        $stmt->execute([
+            'id' => $id
+        ]);
+
+        return $stmt->fetch();
+    }
+
+    public function update($noteId, $changes)
+    {
+        $fields = [];
+        $params = [];
+
+        foreach ($changes as $key => $value)
+        {
+            $fields[] = "$key = :$key";
+            $params[$key] = $value;
+        }
+
+        $params['noteId'] = $noteId;
+
+        $sql = "UPDATE notes SET " . implode(', ', $fields) . " WHERE id = :noteId";
+
+        $stmt = $this->connection->prepare($sql);
+
+        return $stmt->execute($params);
+    }
 }

@@ -24,6 +24,11 @@ class NoteService
         return $this->noteRepository->getNotesByUserId($userId);
     }
 
+    public function getNote($noteId)
+    {
+        return $this->noteRepository->findNoteById($noteId);
+    }
+
     public function addNote($data)
     {
         $errors = $this->validateNote($data);
@@ -52,6 +57,11 @@ class NoteService
         }
 
         return ['success' => false, 'errors' => ['general' => 'Erreur lors de l\'inscription']];
+    }
+
+    public function updateNote($noteId, $changes)
+    {
+        return $this->noteRepository->update($noteId, $changes);
     }
 
     public function getCurrentUser()
