@@ -61,7 +61,7 @@
         <div class="page-content">
 
             <?php if(!empty($successupdate)) : ?>
-                <div class="alert-success">
+                <div class="toast-success" id="toastSuccess">
                     <i class="fa fa-check-circle"></i>
                     <span><?= htmlspecialchars($success) ?></span>
                 </div>
@@ -204,7 +204,7 @@
             </div>
 
             <?php if(!empty($errorupdate)) : ?>
-                <div class="alert-error">
+                <div class="alert-error" id="errorUpdate">
                     <?= htmlspecialchars($error) ?>
                 </div>
 
@@ -287,6 +287,29 @@
 
         closeEditModal.onclick = function(){
             editModal.style.display = "none";
+        }
+
+        // Toast message
+
+        const toast = document.getElementById("toastSuccess");
+
+        if(toast){
+
+            setTimeout(() => {
+                toast.classList.add("toast-hide");
+            },3000);
+
+        }
+
+        // Error update no changes message
+
+        const nothing = document.getElementById("errorUpdate");
+
+        if(nothing){
+
+            setTimeout(() => {
+                nothing.classList.add("nothing-hide");
+            },3000);
         }
         
     </script>
