@@ -524,6 +524,84 @@ html, body {
     cursor: pointer;
 }
 
+/* Toast success design */
+
+.toast-success {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #16a34a;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 9999;
+    animation: slideDown 0.5s ease forwards;
+}
+
+.toast-success i {
+    font-size: 18px;
+}
+
+.toast-success i {
+    font-size: 18px;
+}
+
+@keyframes slideDown {
+    from{
+        top: -100px;
+        opacity: 0;
+    }
+    to{
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+.toast-hide {
+    animation: slideUp 0.4s ease forwards;
+}
+
+@keyframes slideUp {
+    from{
+        top: 30px;
+        opacity: 1;
+    }
+    to{
+        top: -100px;
+        opacity: 0;
+    }
+}
+
+/* Error message in modal */
+
+.alert-error {
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.alert-error::before {
+    content: "⚠";
+    font-size: 16px;
+}
+
+.nothing-hide {
+    display: none;
+}
+
 /* RESPONSIVE */
 
 @media (min-width: 1024px) {
