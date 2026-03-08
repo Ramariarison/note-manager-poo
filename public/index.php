@@ -34,6 +34,7 @@ $router->get('/registerPage', [$authController, 'showRegister']);
 $router->post('/register', [$authController, 'register']);
 $router->post('/login', [$authController, 'login']);
 $router->post('/notes/store', [$noteController, 'addNote']);
+$router->post('/notes/update', [$noteController, 'editNote']);
 
 $router->get('/notes', [$noteController, 'index']);
 

@@ -28,13 +28,22 @@ class NoteController
         // Récuperer l'utilisateur connecté
         $user = $this->authService->getCurrentUser();
 
-        // Récuperer les notes
+        // Récuperer les notes et les messages
         $notes = $this->noteService->getUserNotes();
+
+        $success = $this->session->flash('successupdate');
+
+        $error = $this->session->flash('errorupdate');
+
+        $old = $this->session->flash('old');
 
         // Passer l'utilisateur à la vue
         extract([
             'user' => $user,
             'notes' => $notes,
+            'successupdate' => $success,
+            'errorupdate' => $error,
+            'old' => $old
         ]);
 
         require __DIR__ . '/../../views/notes/note-interface.php';
@@ -57,6 +66,45 @@ class NoteController
         } else {
             var_dump($result);
         }
+    }
+
+    public function editNote()
+    {
+        $noteId = $_POST['id'];
+
+        $note = $this->noteService->getNote($noteId);
+
+        $data = [
+            'id' => $noteId,
+            'title' => trim($_POST['title']),
+            'content' => trim($_POST['content']),
+            'importance_level' => trim($_POST['importance_level'])
+        ];
+
+        $changes = [];
+
+        foreach ($data as $key => $value)
+        {
+            if (trim($note[$key]) !== $value) {
+                $changes[$key] = $value;
+            }
+        }
+
+        if (!empty($changes)) {
+
+            $this->noteService->updateNote($noteId, $changes);
+
+            $this->session->flash('successupdate', 'Note modifiée avec succés');
+
+        } else {
+
+            $this->session->flash('errorupdate', 'Aucun changement détecté');
+
+            $this->session->flash('old', $data);
+
+        }
+
+        $this->redirect('/notes');
     }
 
     public function redirect($path)
