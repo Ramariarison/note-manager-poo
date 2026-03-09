@@ -152,7 +152,10 @@
                     <div class="card-footer">
                         <div class="actions-btns">
                             <div class="left-actions">
-                                <button class="view">
+                                <button 
+                                    class="view"
+                                    data-contentview="<?= htmlspecialchars($note['content']) ?>"
+                                >
                                     <i class="fa fa-eye"></i>
                                     <span>view</span>
                                 </button>
@@ -182,6 +185,22 @@
                 <?php endforeach; ?>
 
             </div>
+        </div>
+    </div>
+
+    <!-- Modal to view note -->
+
+    <div class="modal" id="viewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><span class="add-note">View</span> Note</h3>
+                <span class="close-btn" id="closeViewModal">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <p id="content-view"></p>
+            </div>
+
         </div>
     </div>
 
@@ -313,6 +332,26 @@
 
         closeEditModal.onclick = function(){
             editModal.style.display = "none";
+        }
+
+        // For the modal view
+
+        const viewModal = document.getElementById("viewModal");
+        const closeViewModal = document.getElementById("closeViewModal");
+
+        document.querySelectorAll(".view").forEach(button => {
+
+            button.addEventListener("click", function(){
+
+                document.getElementById("content-view").innerText = this.dataset.contentview;
+
+                viewModal.style.display = "block";
+            });
+
+        });
+
+        closeViewModal.onclick = function(){
+            viewModal.style.display = "none";
         }
 
         // Toast message
