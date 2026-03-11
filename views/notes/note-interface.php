@@ -102,6 +102,21 @@
                 </div>
             <?php endif; ?>
 
+            <!-- Petite fonction helper pour récupérer la couleur appropriée à l'importance level de chaque note -->
+            <?php
+                function getImportanceColor($level)
+                {
+                    $colors = [
+                        'Low' => '#b8e986',
+                        'Medium' => '#4a90e2',
+                        'High' => '#f5a623',
+                        'Critical' => '#d0021b'
+                    ];
+
+                    return $colors[$level];
+                }
+            ?>
+
             <div class="page-header">
                 <h2 class="page-title">My notes</h2>
                 <div class="header-actions">
@@ -137,7 +152,7 @@
                 <div class="note-card">
                     <div class="card-header">
                         <div class="note-priority">
-                            <span class="priority-level"><?= htmlspecialchars(substr($note['importance_level'],0,1)) ?></span>
+                            <span class="priority-level" style="background: <?= getImportanceColor($note['importance_level']) ?>"><?= htmlspecialchars(substr($note['importance_level'],0,1)) ?></span>
                         </div>
 
                         <form action="/crashProject/public/notes/pin" method="POST">
