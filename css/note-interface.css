@@ -288,7 +288,7 @@ html, body {
     width: 36px;
     height: 36px;
 
-    background: linear-gradient(135deg, #2171B5, #3A8DDE);
+    /* background: linear-gradient(135deg, #2171B5, #3A8DDE); */
     color: white;
     font-weight: 600;
 
