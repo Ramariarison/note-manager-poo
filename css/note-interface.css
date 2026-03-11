@@ -314,6 +314,27 @@ html, body {
     background: #e2e8f0;
 }
 
+.pinned-note {
+    padding: 6px 12px;
+    font-size: 12px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #fef3c7;
+    color: #92400e;
+
+    font-weight: 500;
+
+    cursor: not-allowed;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    opacity: 0.9;
+}
+
 .card-body {
     display: flex;
     flex-direction: column;

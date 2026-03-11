@@ -16,7 +16,12 @@ class NoteRepository
 
     public function getNotesByUserId($userId)
     {
-        $sql = "SELECT * FROM notes WHERE user_id = :user_id ORDER BY FIELD(importance_level, 'Critical', 'High', 'Medium', 'Low')";
+        $sql = "SELECT *
+                FROM notes
+                WHERE user_id = :user_id
+                ORDER BY 
+                    is_important DESC,
+                    FIELD(importance_level, 'Critical', 'High', 'Medium', 'Low')";
 
         $stmt = $this->connection->prepare($sql);
 
@@ -83,8 +88,32 @@ class NoteRepository
 
         $stmt = $this->connection->prepare($sql);
 
-         return $stmt->execute([
+        return $stmt->execute([
             'id' => $id
+        ]);
+    }
+
+    public function pinNoteById($id, $user_id)
+    {
+        $sql = "UPDATE notes SET is_important = 1 WHERE id = :id AND user_id = :user_id";
+
+        $stmt = $this->connection->prepare($sql);
+
+        return $stmt->execute([
+            'id' => $id,
+            'user_id' => $user_id
+        ]);
+    }
+
+    public function unpinNoteById($id, $user_id)
+    {
+        $sql = "UPDATE notes SET is_important = 0 WHERE id = :id AND user_id = :user_id";
+
+        $stmt = $this->connection->prepare($sql);
+
+        return $stmt->execute([
+            'id' => $id,
+            'user_id' => $user_id
         ]);
     }
 }

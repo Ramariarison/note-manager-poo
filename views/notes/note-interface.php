@@ -88,6 +88,20 @@
                 </div>
             <?php endif; ?>
 
+            <?php if(!empty($successPinned)) : ?>
+                <div class="toast-success" id="toastSuccess">
+                    <i class="fa fa-check-circle"></i>
+                    <span><?= htmlspecialchars($successPinned) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if(!empty($successUnpinned)) : ?>
+                <div class="toast-success" id="toastSuccess">
+                    <i class="fa fa-check-circle"></i>
+                    <span><?= htmlspecialchars($successUnpinned) ?></span>
+                </div>
+            <?php endif; ?>
+
             <div class="page-header">
                 <h2 class="page-title">My notes</h2>
                 <div class="header-actions">
@@ -125,9 +139,22 @@
                         <div class="note-priority">
                             <span class="priority-level"><?= htmlspecialchars(substr($note['importance_level'],0,1)) ?></span>
                         </div>
-                        <div class="btn-to-pin-note">
-                            <button class="pin-note">pin note</button>
-                        </div>
+
+                        <form action="/crashProject/public/notes/pin" method="POST">
+                            <div class="btn-to-pin-note">
+                                <input type="hidden" name="note_id" value="<?= $note['id'] ?>">
+
+                                <?php if($note['is_important'] == 0) : ?>
+                                    <button class="pin-note">pin note</button>
+                                <?php endif; ?>
+
+                                <?php if($note['is_important'] == 1) : ?>
+                                    <button class="pinned-note" value="<?= $note['id'] ?>">📌 unpinned</button>
+                                <?php endif; ?>
+                                
+                            </div>
+                        </form>
+
                     </div>
                     <div class="card-body">
                         <div class="note-date-and-hour">
