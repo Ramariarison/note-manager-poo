@@ -41,6 +41,10 @@ class NoteController
 
         $successDelete = $this->session->flash('successDelete');
 
+        $successPinned = $this->session->flash('successPinned');
+
+        $successUnpinned = $this->session->flash('successUnpinned');
+
         $old = $this->session->flash('old');
 
         // Passer l'utilisateur à la vue
@@ -51,6 +55,8 @@ class NoteController
             'successAdd' => $successAdd,
             'successUpdate' => $success,
             'successDelete' => $successDelete,
+            'sucessPinned' => $successPinned,
+            'successUnpinned' => $successUnpinned,
             'errorUpdate' => $error,
             'old' => $old
         ]);
@@ -129,6 +135,33 @@ class NoteController
         $this->noteService->deleteNote($id);
 
         $this->session->flash('successDelete', 'Note supprimée avec succés !');
+
+        header('Location: /crashProject/public/notes');
+
+        exit;
+    }
+
+    public function pin()
+    {
+        $id = $_POST['note_id'];
+
+        $note_concerned = $this->noteService->getNote($id);
+
+        if ($note_concerned['is_important']) {
+            
+            $this->noteService->unpinNote($id);
+
+            $this->session->flash('successUnpinned', 'Note unpinned successfully !');
+
+            header('Location: /crashProject/public/notes');
+
+            exit;
+
+        }
+
+        $this->noteService->pinNote($id);
+
+        $this->session->flash('successPinned', 'Note pinned successfully !');
 
         header('Location: /crashProject/public/notes');
 

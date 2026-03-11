@@ -64,6 +64,25 @@ class NoteService
         return $this->noteRepository->update($noteId, $changes);
     }
 
+    public function deleteNote($id)
+    {
+        return $this->noteRepository->deleteNoteById($id);
+    }
+
+    public function pinNote($id)
+    {
+        $user_id = $this->getCurrentUserId();
+
+        return $this->noteRepository->pinNoteById($id, $user_id);
+    }
+
+    public function unpinNote($id)
+    {
+        $user_id = $this->getCurrentUserId();
+
+        return $this->noteRepository->unpinNoteById($id, $user_id);
+    }
+
     public function getCurrentUser()
     {
         return $this->session->get('user');
@@ -73,11 +92,6 @@ class NoteService
     {
         $user = $this->getCurrentUser();
         return $user['id'] ?? null;
-    }
-
-    public function deleteNote($id)
-    {
-        return $this->noteRepository->deleteNoteById($id);
     }
 
     public function validateNote(array $data)

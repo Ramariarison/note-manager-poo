@@ -314,6 +314,27 @@ html, body {
     background: #e2e8f0;
 }
 
+.pinned-note {
+    padding: 6px 12px;
+    font-size: 12px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #fef3c7;
+    color: #92400e;
+
+    font-weight: 500;
+
+    cursor: not-allowed;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    opacity: 0.9;
+}
+
 .card-body {
     display: flex;
     flex-direction: column;
@@ -473,6 +494,8 @@ html, body {
     border-radius: 8px;
     margin: 10% auto;
     position: relative;
+
+    animation: modalAnimation 0.25s ease;
 }
 
 .modal-content label {
@@ -522,6 +545,71 @@ html, body {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+/* View note design */
+#viewModal .modal-content{
+
+    width: 520px;
+    max-width: 90%;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15),
+        0 5px 10px rgba(0,0,0,0.08);
+
+    animation: modalAnimation 0.25s ease;
+}
+
+#viewModal .modal-header{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid #eee;
+}
+
+#viewModal .modal-header h3{
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#viewModal .modal-body{
+
+    padding: 22px;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: #444;
+
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+#content-view{
+    white-space: pre-wrap;
+}
+
+@keyframes modalAnimation{
+
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 /* Toast success design */
