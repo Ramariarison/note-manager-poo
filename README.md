@@ -46,7 +46,3 @@ L'application permet de créer, modifier, supprimer et consulter des notes dans 
 | **HTML5** | Structure des pages |
 | **CSS3** | Styles et mise en page |
 | **PDO** | Accès sécurisé à la base de données |
-
----
-
-## 📁 Structure du projet (MVC)
